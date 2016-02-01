@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		184FAADE1C521ABA00DC9920 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 184FAADD1C521ABA00DC9920 /* main.m */; };
+		184FAAE11C521ABA00DC9920 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 184FAAE01C521ABA00DC9920 /* AppDelegate.m */; };
+		184FAAE91C521ABA00DC9920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184FAAE81C521ABA00DC9920 /* Assets.xcassets */; };
+		184FAAEC1C521ABA00DC9920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184FAAEA1C521ABA00DC9920 /* LaunchScreen.storyboard */; };
+		18DCD6B11C536D41005F5CA1 /* HSSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD6B01C536D41005F5CA1 /* HSSegmentView.m */; };
+		C905FDED1C55A54500B6099B /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C905FDEB1C55A54500B6099B /* PieViewController.m */; };
+		C905FDEE1C55A54500B6099B /* PieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C905FDEC1C55A54500B6099B /* PieViewController.xib */; };
+		C986070A1C5614F8006BEE13 /* DatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98607081C5614F8006BEE13 /* DatePickerController.m */; };
+		C986070B1C5614F8006BEE13 /* DatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98607091C5614F8006BEE13 /* DatePickerController.xib */; };
+		C986070E1C56FA35006BEE13 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C986070D1C56FA35006BEE13 /* XYPieChart.m */; };
+		C98607111C56FAC4006BEE13 /* HSPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C98607101C56FAC4006BEE13 /* HSPickerView.m */; };
+		C9C6231A1C5F28D2008BD2DC /* Main.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9C623191C5F28D2008BD2DC /* Main.Storyboard */; };
+		C9C6231D1C5F2B82008BD2DC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6231C1C5F2B82008BD2DC /* MainViewController.m */; };
+		C9C623211C5F34D8008BD2DC /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6231F1C5F34D8008BD2DC /* SegmentViewController.m */; };
+		C9C623221C5F34D8008BD2DC /* SegmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C623201C5F34D8008BD2DC /* SegmentViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		184FAAD91C521ABA00DC9920 /* Controls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Controls.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		184FAADD1C521ABA00DC9920 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		184FAADF1C521ABA00DC9920 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		184FAAE01C521ABA00DC9920 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		184FAAE81C521ABA00DC9920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		184FAAEB1C521ABA00DC9920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		184FAAED1C521ABA00DC9920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18DCD6AB1C535B76005F5CA1 /* Controls.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controls.pch; sourceTree = "<group>"; };
+		18DCD6AF1C536D41005F5CA1 /* HSSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSegmentView.h; sourceTree = "<group>"; };
+		18DCD6B01C536D41005F5CA1 /* HSSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSegmentView.m; sourceTree = "<group>"; };
+		C905FDEA1C55A54500B6099B /* PieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PieViewController.h; path = DataQuery/Controller/PieViewController.h; sourceTree = "<group>"; };
+		C905FDEB1C55A54500B6099B /* PieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PieViewController.m; path = DataQuery/Controller/PieViewController.m; sourceTree = "<group>"; };
+		C905FDEC1C55A54500B6099B /* PieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PieViewController.xib; path = DataQuery/Controller/PieViewController.xib; sourceTree = "<group>"; };
+		C98607071C5614F8006BEE13 /* DatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatePickerController.h; path = DataQuery/Controller/DatePickerController.h; sourceTree = "<group>"; };
+		C98607081C5614F8006BEE13 /* DatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatePickerController.m; path = DataQuery/Controller/DatePickerController.m; sourceTree = "<group>"; };
+		C98607091C5614F8006BEE13 /* DatePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerController.xib; path = DataQuery/Controller/DatePickerController.xib; sourceTree = "<group>"; };
+		C986070C1C56FA35006BEE13 /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
+		C986070D1C56FA35006BEE13 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
+		C986070F1C56FAC4006BEE13 /* HSPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPickerView.h; sourceTree = "<group>"; };
+		C98607101C56FAC4006BEE13 /* HSPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPickerView.m; sourceTree = "<group>"; };
+		C9C623191C5F28D2008BD2DC /* Main.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.Storyboard; sourceTree = "<group>"; };
+		C9C6231B1C5F2B82008BD2DC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		C9C6231C1C5F2B82008BD2DC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		C9C6231E1C5F34D8008BD2DC /* SegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentViewController.h; sourceTree = "<group>"; };
+		C9C6231F1C5F34D8008BD2DC /* SegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentViewController.m; sourceTree = "<group>"; };
+		C9C623201C5F34D8008BD2DC /* SegmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentViewController.xib; sourceTree = "<group>"; };
+		CD32A4E61ADE05ED7E97B0BA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		184FAAD61C521ABA00DC9920 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		184FAAD01C521ABA00DC9920 = {
+			isa = PBXGroup;
+			children = (
+				184FAADB1C521ABA00DC9920 /* Controls */,
+				184FAADA1C521ABA00DC9920 /* Products */,
+				2B57A9B2FB811B9D0638D4AC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		184FAADA1C521ABA00DC9920 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				184FAAD91C521ABA00DC9920 /* Controls.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		184FAADB1C521ABA00DC9920 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				184FAADF1C521ABA00DC9920 /* AppDelegate.h */,
+				184FAAE01C521ABA00DC9920 /* AppDelegate.m */,
+				C905FDEA1C55A54500B6099B /* PieViewController.h */,
+				C905FDEB1C55A54500B6099B /* PieViewController.m */,
+				C905FDEC1C55A54500B6099B /* PieViewController.xib */,
+				C98607071C5614F8006BEE13 /* DatePickerController.h */,
+				C98607081C5614F8006BEE13 /* DatePickerController.m */,
+				C98607091C5614F8006BEE13 /* DatePickerController.xib */,
+				C9C6231E1C5F34D8008BD2DC /* SegmentViewController.h */,
+				C9C6231F1C5F34D8008BD2DC /* SegmentViewController.m */,
+				C9C623201C5F34D8008BD2DC /* SegmentViewController.xib */,
+				C9C6231B1C5F2B82008BD2DC /* MainViewController.h */,
+				C9C6231C1C5F2B82008BD2DC /* MainViewController.m */,
+				18DCD6A51C535962005F5CA1 /* Common */,
+				184FAAE81C521ABA00DC9920 /* Assets.xcassets */,
+				C9C623191C5F28D2008BD2DC /* Main.Storyboard */,
+				184FAAEA1C521ABA00DC9920 /* LaunchScreen.storyboard */,
+				18DCD6AB1C535B76005F5CA1 /* Controls.pch */,
+				184FAADC1C521ABA00DC9920 /* Supporting Files */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		184FAADC1C521ABA00DC9920 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				184FAAED1C521ABA00DC9920 /* Info.plist */,
+				184FAADD1C521ABA00DC9920 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18DCD6A51C535962005F5CA1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				18DCD6A61C535962005F5CA1 /* Model */,
+				18DCD6A71C535962005F5CA1 /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		18DCD6A61C535962005F5CA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18DCD6A71C535962005F5CA1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C986070C1C56FA35006BEE13 /* XYPieChart.h */,
+				C986070D1C56FA35006BEE13 /* XYPieChart.m */,
+				18DCD6AF1C536D41005F5CA1 /* HSSegmentView.h */,
+				18DCD6B01C536D41005F5CA1 /* HSSegmentView.m */,
+				C986070F1C56FAC4006BEE13 /* HSPickerView.h */,
+				C98607101C56FAC4006BEE13 /* HSPickerView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B57A9B2FB811B9D0638D4AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD32A4E61ADE05ED7E97B0BA /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		184FAAD81C521ABA00DC9920 /* Controls */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 184FAAF01C521ABB00DC9920 /* Build configuration list for PBXNativeTarget "Controls" */;
+			buildPhases = (
+				184FAAD51C521ABA00DC9920 /* Sources */,
+				184FAAD61C521ABA00DC9920 /* Frameworks */,
+				184FAAD71C521ABA00DC9920 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Controls;
+			productName = Controls;
+			productReference = 184FAAD91C521ABA00DC9920 /* Controls.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		184FAAD11C521ABA00DC9920 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "oubuy·luo";
+				TargetAttributes = {
+					184FAAD81C521ABA00DC9920 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 8MFPCVBA88;
+					};
+				};
+			};
+			buildConfigurationList = 184FAAD41C521ABA00DC9920 /* Build configuration list for PBXProject "Controls" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 184FAAD01C521ABA00DC9920;
+			productRefGroup = 184FAADA1C521ABA00DC9920 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				184FAAD81C521ABA00DC9920 /* Controls */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		184FAAD71C521ABA00DC9920 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9C623221C5F34D8008BD2DC /* SegmentViewController.xib in Resources */,
+				C905FDEE1C55A54500B6099B /* PieViewController.xib in Resources */,
+				184FAAEC1C521ABA00DC9920 /* LaunchScreen.storyboard in Resources */,
+				C986070B1C5614F8006BEE13 /* DatePickerController.xib in Resources */,
+				184FAAE91C521ABA00DC9920 /* Assets.xcassets in Resources */,
+				C9C6231A1C5F28D2008BD2DC /* Main.Storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		184FAAD51C521ABA00DC9920 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9C623211C5F34D8008BD2DC /* SegmentViewController.m in Sources */,
+				C905FDED1C55A54500B6099B /* PieViewController.m in Sources */,
+				18DCD6B11C536D41005F5CA1 /* HSSegmentView.m in Sources */,
+				C986070A1C5614F8006BEE13 /* DatePickerController.m in Sources */,
+				C9C6231D1C5F2B82008BD2DC /* MainViewController.m in Sources */,
+				184FAAE11C521ABA00DC9920 /* AppDelegate.m in Sources */,
+				184FAADE1C521ABA00DC9920 /* main.m in Sources */,
+				C986070E1C56FA35006BEE13 /* XYPieChart.m in Sources */,
+				C98607111C56FAC4006BEE13 /* HSPickerView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		184FAAEA1C521ABA00DC9920 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				184FAAEB1C521ABA00DC9920 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		184FAAEE1C521ABA00DC9920 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		184FAAEF1C521ABB00DC9920 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		184FAAF11C521ABB00DC9920 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Controls/Controls.pch";
+				INFOPLIST_FILE = Controls/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.oubuy.YMAgent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6d04e9d3-51db-4d96-aa4f-1e075874c56f";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		184FAAF21C521ABB00DC9920 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Controls/Controls.pch";
+				INFOPLIST_FILE = Controls/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.oubuy.YMAgent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6d04e9d3-51db-4d96-aa4f-1e075874c56f";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		184FAAD41C521ABA00DC9920 /* Build configuration list for PBXProject "Controls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				184FAAEE1C521ABA00DC9920 /* Debug */,
+				184FAAEF1C521ABB00DC9920 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		184FAAF01C521ABB00DC9920 /* Build configuration list for PBXNativeTarget "Controls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				184FAAF11C521ABB00DC9920 /* Debug */,
+				184FAAF21C521ABB00DC9920 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 184FAAD11C521ABA00DC9920 /* Project object */;
+}

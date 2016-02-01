@@ -1,0 +1,26 @@
+//
+//  YiMaoAgent.pch
+//  YiMaoAgent
+//
+//  Created by Apple on 16/1/23.
+//  Copyright © 2016年 oubuy·luo. All rights reserved.
+//
+
+#ifndef YiMaoAgent_pch
+#define YiMaoAgent_pch
+
+/********* 屏幕尺寸大小 ***********/
+#define Width  [UIScreen mainScreen].bounds.size.width
+#define Height [UIScreen mainScreen].bounds.size.height
+#define Window [UIScreen mainScreen].bounds
+/********************************/
+
+/*********** 颜色RGB *************/
+#define RGB(R,G,B,A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
+/** 灰白 */
+#define WhiteGray RGB(239,239,239,1)
+/********************************/
+
+#define APP  [UIApplication sharedApplication].delegate
+
+#endif /* YiMaoAgent_pch */
