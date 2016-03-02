@@ -10,6 +10,8 @@
 #import "PieViewController.h"
 #import "DatePickerController.h"
 #import "SegmentViewController.h"
+#import "PolyViewController.h"
+#import "AnalysisViewController.h"
 
 @interface MainViewController ()
 
@@ -22,7 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.actionArray = [NSMutableArray array];
-    [self.actionArray addObject:@[@"enterPiePage", @"enterDatePickerPage", @"enterSegmentPage"]];
+    [self.actionArray addObject:@[@"enterPiePage", @"enterDatePickerPage",
+                                  @"enterSegmentPage", @"enterPolyPage", @"enterAnalysisPage"]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -39,6 +42,12 @@
 }
 - (void)enterSegmentPage {
     [self.navigationController pushViewController:[SegmentViewController new] animated:YES];
+}
+- (void)enterPolyPage {
+    [self.navigationController pushViewController:[PolyViewController new] animated:YES];
+}
+- (void)enterAnalysisPage {
+    [self.navigationController pushViewController:[AnalysisViewController new] animated:YES];
 }
 
 @end

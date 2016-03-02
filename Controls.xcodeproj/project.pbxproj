@@ -12,16 +12,23 @@
 		184FAAE91C521ABA00DC9920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184FAAE81C521ABA00DC9920 /* Assets.xcassets */; };
 		184FAAEC1C521ABA00DC9920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184FAAEA1C521ABA00DC9920 /* LaunchScreen.storyboard */; };
 		18DCD6B11C536D41005F5CA1 /* HSSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD6B01C536D41005F5CA1 /* HSSegmentView.m */; };
-		C905FDED1C55A54500B6099B /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C905FDEB1C55A54500B6099B /* PieViewController.m */; };
-		C905FDEE1C55A54500B6099B /* PieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C905FDEC1C55A54500B6099B /* PieViewController.xib */; };
-		C986070A1C5614F8006BEE13 /* DatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98607081C5614F8006BEE13 /* DatePickerController.m */; };
-		C986070B1C5614F8006BEE13 /* DatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98607091C5614F8006BEE13 /* DatePickerController.xib */; };
+		C94BCBBA1C72AB4C0092C0BD /* DatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBB51C72AB4C0092C0BD /* DatePickerController.m */; };
+		C94BCBBB1C72AB4C0092C0BD /* DatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBB61C72AB4C0092C0BD /* DatePickerController.xib */; };
+		C94BCBBC1C72AB4C0092C0BD /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBB81C72AB4C0092C0BD /* PieViewController.m */; };
+		C94BCBBD1C72AB4C0092C0BD /* PieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBB91C72AB4C0092C0BD /* PieViewController.xib */; };
+		C94BCBC01C72AB8C0092C0BD /* HSPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBBF1C72AB8C0092C0BD /* HSPolyline.m */; };
+		C94BCBC41C72AFF70092C0BD /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBC21C72AFF70092C0BD /* SegmentViewController.m */; };
+		C94BCBC51C72AFF70092C0BD /* SegmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBC31C72AFF70092C0BD /* SegmentViewController.xib */; };
+		C94BCBC91C72B02B0092C0BD /* PolyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBC71C72B02B0092C0BD /* PolyViewController.m */; };
+		C94BCBCA1C72B02B0092C0BD /* PolyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBC81C72B02B0092C0BD /* PolyViewController.xib */; };
+		C96F1D101C7E8C2D008B19EC /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96F1D0E1C7E8C2D008B19EC /* AnalysisViewController.xib */; };
+		C96F1D131C7E8E10008B19EC /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F1D121C7E8E10008B19EC /* AnalysisViewController.m */; };
+		C96F1D161C7E9369008B19EC /* HSAnalysisView.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F1D151C7E9369008B19EC /* HSAnalysisView.m */; };
+		C96F222F1C869587008B19EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F222E1C869587008B19EC /* QuartzCore.framework */; };
 		C986070E1C56FA35006BEE13 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C986070D1C56FA35006BEE13 /* XYPieChart.m */; };
 		C98607111C56FAC4006BEE13 /* HSPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C98607101C56FAC4006BEE13 /* HSPickerView.m */; };
 		C9C6231A1C5F28D2008BD2DC /* Main.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9C623191C5F28D2008BD2DC /* Main.Storyboard */; };
 		C9C6231D1C5F2B82008BD2DC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6231C1C5F2B82008BD2DC /* MainViewController.m */; };
-		C9C623211C5F34D8008BD2DC /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6231F1C5F34D8008BD2DC /* SegmentViewController.m */; };
-		C9C623221C5F34D8008BD2DC /* SegmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C623201C5F34D8008BD2DC /* SegmentViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,15 +39,29 @@
 		184FAAE81C521ABA00DC9920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		184FAAEB1C521ABA00DC9920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		184FAAED1C521ABA00DC9920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18DCD6AB1C535B76005F5CA1 /* Controls.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controls.pch; sourceTree = "<group>"; };
 		18DCD6AF1C536D41005F5CA1 /* HSSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSegmentView.h; sourceTree = "<group>"; };
 		18DCD6B01C536D41005F5CA1 /* HSSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSegmentView.m; sourceTree = "<group>"; };
-		C905FDEA1C55A54500B6099B /* PieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PieViewController.h; path = DataQuery/Controller/PieViewController.h; sourceTree = "<group>"; };
-		C905FDEB1C55A54500B6099B /* PieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PieViewController.m; path = DataQuery/Controller/PieViewController.m; sourceTree = "<group>"; };
-		C905FDEC1C55A54500B6099B /* PieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PieViewController.xib; path = DataQuery/Controller/PieViewController.xib; sourceTree = "<group>"; };
-		C98607071C5614F8006BEE13 /* DatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatePickerController.h; path = DataQuery/Controller/DatePickerController.h; sourceTree = "<group>"; };
-		C98607081C5614F8006BEE13 /* DatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatePickerController.m; path = DataQuery/Controller/DatePickerController.m; sourceTree = "<group>"; };
-		C98607091C5614F8006BEE13 /* DatePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerController.xib; path = DataQuery/Controller/DatePickerController.xib; sourceTree = "<group>"; };
+		C94BCBB41C72AB4C0092C0BD /* DatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerController.h; sourceTree = "<group>"; };
+		C94BCBB51C72AB4C0092C0BD /* DatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerController.m; sourceTree = "<group>"; };
+		C94BCBB61C72AB4C0092C0BD /* DatePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerController.xib; sourceTree = "<group>"; };
+		C94BCBB71C72AB4C0092C0BD /* PieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieViewController.h; sourceTree = "<group>"; };
+		C94BCBB81C72AB4C0092C0BD /* PieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieViewController.m; sourceTree = "<group>"; };
+		C94BCBB91C72AB4C0092C0BD /* PieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieViewController.xib; sourceTree = "<group>"; };
+		C94BCBBE1C72AB8C0092C0BD /* HSPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPolyline.h; sourceTree = "<group>"; };
+		C94BCBBF1C72AB8C0092C0BD /* HSPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPolyline.m; sourceTree = "<group>"; };
+		C94BCBC11C72AFF70092C0BD /* SegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentViewController.h; sourceTree = "<group>"; };
+		C94BCBC21C72AFF70092C0BD /* SegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentViewController.m; sourceTree = "<group>"; };
+		C94BCBC31C72AFF70092C0BD /* SegmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentViewController.xib; sourceTree = "<group>"; };
+		C94BCBC61C72B02B0092C0BD /* PolyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolyViewController.h; sourceTree = "<group>"; };
+		C94BCBC71C72B02B0092C0BD /* PolyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolyViewController.m; sourceTree = "<group>"; };
+		C94BCBC81C72B02B0092C0BD /* PolyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PolyViewController.xib; sourceTree = "<group>"; };
+		C94BCBCC1C72B14E0092C0BD /* Controls.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controls.pch; sourceTree = "<group>"; };
+		C96F1D0E1C7E8C2D008B19EC /* AnalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
+		C96F1D111C7E8E10008B19EC /* AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisViewController.h; sourceTree = "<group>"; };
+		C96F1D121C7E8E10008B19EC /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisViewController.m; sourceTree = "<group>"; };
+		C96F1D141C7E9369008B19EC /* HSAnalysisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSAnalysisView.h; sourceTree = "<group>"; };
+		C96F1D151C7E9369008B19EC /* HSAnalysisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAnalysisView.m; sourceTree = "<group>"; };
+		C96F222E1C869587008B19EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C986070C1C56FA35006BEE13 /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
 		C986070D1C56FA35006BEE13 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
 		C986070F1C56FAC4006BEE13 /* HSPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPickerView.h; sourceTree = "<group>"; };
@@ -48,9 +69,6 @@
 		C9C623191C5F28D2008BD2DC /* Main.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.Storyboard; sourceTree = "<group>"; };
 		C9C6231B1C5F2B82008BD2DC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		C9C6231C1C5F2B82008BD2DC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		C9C6231E1C5F34D8008BD2DC /* SegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentViewController.h; sourceTree = "<group>"; };
-		C9C6231F1C5F34D8008BD2DC /* SegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentViewController.m; sourceTree = "<group>"; };
-		C9C623201C5F34D8008BD2DC /* SegmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentViewController.xib; sourceTree = "<group>"; };
 		CD32A4E61ADE05ED7E97B0BA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -59,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96F222F1C869587008B19EC /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,22 +106,14 @@
 			children = (
 				184FAADF1C521ABA00DC9920 /* AppDelegate.h */,
 				184FAAE01C521ABA00DC9920 /* AppDelegate.m */,
-				C905FDEA1C55A54500B6099B /* PieViewController.h */,
-				C905FDEB1C55A54500B6099B /* PieViewController.m */,
-				C905FDEC1C55A54500B6099B /* PieViewController.xib */,
-				C98607071C5614F8006BEE13 /* DatePickerController.h */,
-				C98607081C5614F8006BEE13 /* DatePickerController.m */,
-				C98607091C5614F8006BEE13 /* DatePickerController.xib */,
-				C9C6231E1C5F34D8008BD2DC /* SegmentViewController.h */,
-				C9C6231F1C5F34D8008BD2DC /* SegmentViewController.m */,
-				C9C623201C5F34D8008BD2DC /* SegmentViewController.xib */,
 				C9C6231B1C5F2B82008BD2DC /* MainViewController.h */,
 				C9C6231C1C5F2B82008BD2DC /* MainViewController.m */,
-				18DCD6A51C535962005F5CA1 /* Common */,
+				C94BCBB31C72AB4C0092C0BD /* Controller */,
+				18DCD6A71C535962005F5CA1 /* View */,
+				18DCD6A61C535962005F5CA1 /* Model */,
 				184FAAE81C521ABA00DC9920 /* Assets.xcassets */,
 				C9C623191C5F28D2008BD2DC /* Main.Storyboard */,
 				184FAAEA1C521ABA00DC9920 /* LaunchScreen.storyboard */,
-				18DCD6AB1C535B76005F5CA1 /* Controls.pch */,
 				184FAADC1C521ABA00DC9920 /* Supporting Files */,
 			);
 			path = Controls;
@@ -111,47 +122,68 @@
 		184FAADC1C521ABA00DC9920 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C94BCBCC1C72B14E0092C0BD /* Controls.pch */,
 				184FAAED1C521ABA00DC9920 /* Info.plist */,
 				184FAADD1C521ABA00DC9920 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		18DCD6A51C535962005F5CA1 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				18DCD6A61C535962005F5CA1 /* Model */,
-				18DCD6A71C535962005F5CA1 /* View */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		18DCD6A61C535962005F5CA1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Model;
+			name = Model;
+			path = Common/Model;
 			sourceTree = "<group>";
 		};
 		18DCD6A71C535962005F5CA1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C94BCBBE1C72AB8C0092C0BD /* HSPolyline.h */,
+				C94BCBBF1C72AB8C0092C0BD /* HSPolyline.m */,
 				C986070C1C56FA35006BEE13 /* XYPieChart.h */,
 				C986070D1C56FA35006BEE13 /* XYPieChart.m */,
-				18DCD6AF1C536D41005F5CA1 /* HSSegmentView.h */,
-				18DCD6B01C536D41005F5CA1 /* HSSegmentView.m */,
 				C986070F1C56FAC4006BEE13 /* HSPickerView.h */,
 				C98607101C56FAC4006BEE13 /* HSPickerView.m */,
+				C96F1D141C7E9369008B19EC /* HSAnalysisView.h */,
+				C96F1D151C7E9369008B19EC /* HSAnalysisView.m */,
+				18DCD6AF1C536D41005F5CA1 /* HSSegmentView.h */,
+				18DCD6B01C536D41005F5CA1 /* HSSegmentView.m */,
 			);
-			path = View;
+			name = View;
+			path = Common/View;
 			sourceTree = "<group>";
 		};
 		2B57A9B2FB811B9D0638D4AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C96F222E1C869587008B19EC /* QuartzCore.framework */,
 				CD32A4E61ADE05ED7E97B0BA /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C94BCBB31C72AB4C0092C0BD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C94BCBB41C72AB4C0092C0BD /* DatePickerController.h */,
+				C94BCBB51C72AB4C0092C0BD /* DatePickerController.m */,
+				C94BCBB61C72AB4C0092C0BD /* DatePickerController.xib */,
+				C94BCBB71C72AB4C0092C0BD /* PieViewController.h */,
+				C94BCBB81C72AB4C0092C0BD /* PieViewController.m */,
+				C94BCBB91C72AB4C0092C0BD /* PieViewController.xib */,
+				C94BCBC11C72AFF70092C0BD /* SegmentViewController.h */,
+				C94BCBC21C72AFF70092C0BD /* SegmentViewController.m */,
+				C94BCBC31C72AFF70092C0BD /* SegmentViewController.xib */,
+				C94BCBC61C72B02B0092C0BD /* PolyViewController.h */,
+				C94BCBC71C72B02B0092C0BD /* PolyViewController.m */,
+				C94BCBC81C72B02B0092C0BD /* PolyViewController.xib */,
+				C96F1D111C7E8E10008B19EC /* AnalysisViewController.h */,
+				C96F1D121C7E8E10008B19EC /* AnalysisViewController.m */,
+				C96F1D0E1C7E8C2D008B19EC /* AnalysisViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +217,6 @@
 				TargetAttributes = {
 					184FAAD81C521ABA00DC9920 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 8MFPCVBA88;
 					};
 				};
 			};
@@ -212,11 +243,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9C623221C5F34D8008BD2DC /* SegmentViewController.xib in Resources */,
-				C905FDEE1C55A54500B6099B /* PieViewController.xib in Resources */,
+				C94BCBC51C72AFF70092C0BD /* SegmentViewController.xib in Resources */,
 				184FAAEC1C521ABA00DC9920 /* LaunchScreen.storyboard in Resources */,
-				C986070B1C5614F8006BEE13 /* DatePickerController.xib in Resources */,
+				C94BCBCA1C72B02B0092C0BD /* PolyViewController.xib in Resources */,
+				C94BCBBB1C72AB4C0092C0BD /* DatePickerController.xib in Resources */,
+				C94BCBBD1C72AB4C0092C0BD /* PieViewController.xib in Resources */,
 				184FAAE91C521ABA00DC9920 /* Assets.xcassets in Resources */,
+				C96F1D101C7E8C2D008B19EC /* AnalysisViewController.xib in Resources */,
 				C9C6231A1C5F28D2008BD2DC /* Main.Storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,14 +261,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9C623211C5F34D8008BD2DC /* SegmentViewController.m in Sources */,
-				C905FDED1C55A54500B6099B /* PieViewController.m in Sources */,
+				C94BCBC01C72AB8C0092C0BD /* HSPolyline.m in Sources */,
+				C94BCBBA1C72AB4C0092C0BD /* DatePickerController.m in Sources */,
+				C96F1D131C7E8E10008B19EC /* AnalysisViewController.m in Sources */,
 				18DCD6B11C536D41005F5CA1 /* HSSegmentView.m in Sources */,
-				C986070A1C5614F8006BEE13 /* DatePickerController.m in Sources */,
+				C94BCBBC1C72AB4C0092C0BD /* PieViewController.m in Sources */,
 				C9C6231D1C5F2B82008BD2DC /* MainViewController.m in Sources */,
 				184FAAE11C521ABA00DC9920 /* AppDelegate.m in Sources */,
 				184FAADE1C521ABA00DC9920 /* main.m in Sources */,
 				C986070E1C56FA35006BEE13 /* XYPieChart.m in Sources */,
+				C94BCBC41C72AFF70092C0BD /* SegmentViewController.m in Sources */,
+				C96F1D161C7E9369008B19EC /* HSAnalysisView.m in Sources */,
+				C94BCBC91C72B02B0092C0BD /* PolyViewController.m in Sources */,
 				C98607111C56FAC4006BEE13 /* HSPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,9 +381,9 @@
 				INFOPLIST_FILE = Controls/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oubuy.YMAgent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bugull.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6d04e9d3-51db-4d96-aa4f-1e075874c56f";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -361,9 +398,9 @@
 				INFOPLIST_FILE = Controls/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oubuy.YMAgent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bugull.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6d04e9d3-51db-4d96-aa4f-1e075874c56f";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

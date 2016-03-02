@@ -58,7 +58,7 @@
 @interface HSPickerView : UIView
 
 @property (strong, nonatomic) UIColor *normalTitleColor;
-@property(nonatomic,readonly) NSInteger numberOfComponents;
+@property (nonatomic,readonly) NSInteger numberOfComponents;
 @property (weak, nonatomic) id<HSPickerViewDelegate> delegate;
 
 /**

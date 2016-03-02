@@ -1,26 +1,14 @@
 //
-//  YiMaoAgent.pch
-//  YiMaoAgent
+//  Controls.pch
+//  Controls
 //
-//  Created by Apple on 16/1/23.
-//  Copyright © 2016年 oubuy·luo. All rights reserved.
+//  Created by Shaojun Han on 2/16/16.
+//  Copyright © 2016 oubuy·luo. All rights reserved.
 //
 
-#ifndef YiMaoAgent_pch
-#define YiMaoAgent_pch
+#ifndef Controls_h
+#define Controls_h
 
-/********* 屏幕尺寸大小 ***********/
-#define Width  [UIScreen mainScreen].bounds.size.width
-#define Height [UIScreen mainScreen].bounds.size.height
-#define Window [UIScreen mainScreen].bounds
-/********************************/
+#define RGB(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a/255.0]
 
-/*********** 颜色RGB *************/
-#define RGB(R,G,B,A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
-/** 灰白 */
-#define WhiteGray RGB(239,239,239,1)
-/********************************/
-
-#define APP  [UIApplication sharedApplication].delegate
-
-#endif /* YiMaoAgent_pch */
+#endif /* Controls_h */
