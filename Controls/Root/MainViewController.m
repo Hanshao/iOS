@@ -12,6 +12,7 @@
 #import "SegmentViewController.h"
 #import "PolyViewController.h"
 #import "AnalysisViewController.h"
+#import "ScanViewController.h"
 
 @interface MainViewController ()
 
@@ -24,8 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.actionArray = [NSMutableArray array];
-    [self.actionArray addObject:@[@"enterPiePage", @"enterDatePickerPage",
-                                  @"enterSegmentPage", @"enterPolyPage", @"enterAnalysisPage"]];
+    [self.actionArray addObject:@[@"enterPiePage", @"enterDatePickerPage", @"enterSegmentPage",
+                                  @"enterPolyPage", @"enterAnalysisPage", @"enterQRScanPage"]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -48,6 +49,9 @@
 }
 - (void)enterAnalysisPage {
     [self.navigationController pushViewController:[AnalysisViewController new] animated:YES];
+}
+- (void)enterQRScanPage {
+    [self.navigationController presentViewController:[ScanViewController new] animated:YES completion:nil];
 }
 
 @end

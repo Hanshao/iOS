@@ -7,68 +7,79 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		184FAADE1C521ABA00DC9920 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 184FAADD1C521ABA00DC9920 /* main.m */; };
-		184FAAE11C521ABA00DC9920 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 184FAAE01C521ABA00DC9920 /* AppDelegate.m */; };
 		184FAAE91C521ABA00DC9920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184FAAE81C521ABA00DC9920 /* Assets.xcassets */; };
 		184FAAEC1C521ABA00DC9920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184FAAEA1C521ABA00DC9920 /* LaunchScreen.storyboard */; };
-		18DCD6B11C536D41005F5CA1 /* HSSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD6B01C536D41005F5CA1 /* HSSegmentView.m */; };
 		C94BCBBA1C72AB4C0092C0BD /* DatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBB51C72AB4C0092C0BD /* DatePickerController.m */; };
 		C94BCBBB1C72AB4C0092C0BD /* DatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBB61C72AB4C0092C0BD /* DatePickerController.xib */; };
 		C94BCBBC1C72AB4C0092C0BD /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBB81C72AB4C0092C0BD /* PieViewController.m */; };
 		C94BCBBD1C72AB4C0092C0BD /* PieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBB91C72AB4C0092C0BD /* PieViewController.xib */; };
-		C94BCBC01C72AB8C0092C0BD /* HSPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBBF1C72AB8C0092C0BD /* HSPolyline.m */; };
 		C94BCBC41C72AFF70092C0BD /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBC21C72AFF70092C0BD /* SegmentViewController.m */; };
 		C94BCBC51C72AFF70092C0BD /* SegmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBC31C72AFF70092C0BD /* SegmentViewController.xib */; };
 		C94BCBC91C72B02B0092C0BD /* PolyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBC71C72B02B0092C0BD /* PolyViewController.m */; };
 		C94BCBCA1C72B02B0092C0BD /* PolyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBC81C72B02B0092C0BD /* PolyViewController.xib */; };
 		C96F1D101C7E8C2D008B19EC /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96F1D0E1C7E8C2D008B19EC /* AnalysisViewController.xib */; };
 		C96F1D131C7E8E10008B19EC /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F1D121C7E8E10008B19EC /* AnalysisViewController.m */; };
-		C96F1D161C7E9369008B19EC /* HSAnalysisView.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F1D151C7E9369008B19EC /* HSAnalysisView.m */; };
 		C96F222F1C869587008B19EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F222E1C869587008B19EC /* QuartzCore.framework */; };
-		C986070E1C56FA35006BEE13 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C986070D1C56FA35006BEE13 /* XYPieChart.m */; };
-		C98607111C56FAC4006BEE13 /* HSPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C98607101C56FAC4006BEE13 /* HSPickerView.m */; };
-		C9C6231A1C5F28D2008BD2DC /* Main.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9C623191C5F28D2008BD2DC /* Main.Storyboard */; };
-		C9C6231D1C5F2B82008BD2DC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C6231C1C5F2B82008BD2DC /* MainViewController.m */; };
+		C96F225C1C88268F008B19EC /* HSScaner.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F225B1C88268F008B19EC /* HSScaner.m */; };
+		C96F226A1C88269F008B19EC /* HSAnalysisView.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F225F1C88269F008B19EC /* HSAnalysisView.m */; };
+		C96F226B1C88269F008B19EC /* HSPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22611C88269F008B19EC /* HSPickerView.m */; };
+		C96F226C1C88269F008B19EC /* HSPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22631C88269F008B19EC /* HSPolyline.m */; };
+		C96F226D1C88269F008B19EC /* HSSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22651C88269F008B19EC /* HSSegmentView.m */; };
+		C96F226E1C88269F008B19EC /* PhotoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22671C88269F008B19EC /* PhotoLayer.m */; };
+		C96F226F1C88269F008B19EC /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22691C88269F008B19EC /* XYPieChart.m */; };
+		C96F22781C8826F0008B19EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22721C8826F0008B19EC /* AppDelegate.m */; };
+		C96F22791C8826F0008B19EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22741C8826F0008B19EC /* main.m */; };
+		C96F227A1C8826F0008B19EC /* Main.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96F22751C8826F0008B19EC /* Main.Storyboard */; };
+		C96F227B1C8826F0008B19EC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22771C8826F0008B19EC /* MainViewController.m */; };
+		C96F227E1C882794008B19EC /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F227D1C882794008B19EC /* ScanViewController.m */; };
+		C96F22801C8827A4008B19EC /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96F227F1C8827A4008B19EC /* ScanViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		184FAAD91C521ABA00DC9920 /* Controls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Controls.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		184FAADD1C521ABA00DC9920 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		184FAADF1C521ABA00DC9920 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		184FAAE01C521ABA00DC9920 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		184FAAE81C521ABA00DC9920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		184FAAEB1C521ABA00DC9920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		184FAAED1C521ABA00DC9920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18DCD6AF1C536D41005F5CA1 /* HSSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSegmentView.h; sourceTree = "<group>"; };
-		18DCD6B01C536D41005F5CA1 /* HSSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSegmentView.m; sourceTree = "<group>"; };
 		C94BCBB41C72AB4C0092C0BD /* DatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerController.h; sourceTree = "<group>"; };
 		C94BCBB51C72AB4C0092C0BD /* DatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerController.m; sourceTree = "<group>"; };
 		C94BCBB61C72AB4C0092C0BD /* DatePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerController.xib; sourceTree = "<group>"; };
 		C94BCBB71C72AB4C0092C0BD /* PieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieViewController.h; sourceTree = "<group>"; };
 		C94BCBB81C72AB4C0092C0BD /* PieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieViewController.m; sourceTree = "<group>"; };
 		C94BCBB91C72AB4C0092C0BD /* PieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieViewController.xib; sourceTree = "<group>"; };
-		C94BCBBE1C72AB8C0092C0BD /* HSPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPolyline.h; sourceTree = "<group>"; };
-		C94BCBBF1C72AB8C0092C0BD /* HSPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPolyline.m; sourceTree = "<group>"; };
 		C94BCBC11C72AFF70092C0BD /* SegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentViewController.h; sourceTree = "<group>"; };
 		C94BCBC21C72AFF70092C0BD /* SegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentViewController.m; sourceTree = "<group>"; };
 		C94BCBC31C72AFF70092C0BD /* SegmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentViewController.xib; sourceTree = "<group>"; };
 		C94BCBC61C72B02B0092C0BD /* PolyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolyViewController.h; sourceTree = "<group>"; };
 		C94BCBC71C72B02B0092C0BD /* PolyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolyViewController.m; sourceTree = "<group>"; };
 		C94BCBC81C72B02B0092C0BD /* PolyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PolyViewController.xib; sourceTree = "<group>"; };
-		C94BCBCC1C72B14E0092C0BD /* Controls.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controls.pch; sourceTree = "<group>"; };
 		C96F1D0E1C7E8C2D008B19EC /* AnalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
 		C96F1D111C7E8E10008B19EC /* AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisViewController.h; sourceTree = "<group>"; };
 		C96F1D121C7E8E10008B19EC /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisViewController.m; sourceTree = "<group>"; };
-		C96F1D141C7E9369008B19EC /* HSAnalysisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSAnalysisView.h; sourceTree = "<group>"; };
-		C96F1D151C7E9369008B19EC /* HSAnalysisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAnalysisView.m; sourceTree = "<group>"; };
 		C96F222E1C869587008B19EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C986070C1C56FA35006BEE13 /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
-		C986070D1C56FA35006BEE13 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
-		C986070F1C56FAC4006BEE13 /* HSPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPickerView.h; sourceTree = "<group>"; };
-		C98607101C56FAC4006BEE13 /* HSPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPickerView.m; sourceTree = "<group>"; };
-		C9C623191C5F28D2008BD2DC /* Main.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.Storyboard; sourceTree = "<group>"; };
-		C9C6231B1C5F2B82008BD2DC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		C9C6231C1C5F2B82008BD2DC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		C96F225A1C88268F008B19EC /* HSScaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSScaner.h; sourceTree = "<group>"; };
+		C96F225B1C88268F008B19EC /* HSScaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSScaner.m; sourceTree = "<group>"; };
+		C96F225E1C88269F008B19EC /* HSAnalysisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSAnalysisView.h; sourceTree = "<group>"; };
+		C96F225F1C88269F008B19EC /* HSAnalysisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAnalysisView.m; sourceTree = "<group>"; };
+		C96F22601C88269F008B19EC /* HSPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPickerView.h; sourceTree = "<group>"; };
+		C96F22611C88269F008B19EC /* HSPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPickerView.m; sourceTree = "<group>"; };
+		C96F22621C88269F008B19EC /* HSPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPolyline.h; sourceTree = "<group>"; };
+		C96F22631C88269F008B19EC /* HSPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPolyline.m; sourceTree = "<group>"; };
+		C96F22641C88269F008B19EC /* HSSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSegmentView.h; sourceTree = "<group>"; };
+		C96F22651C88269F008B19EC /* HSSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSegmentView.m; sourceTree = "<group>"; };
+		C96F22661C88269F008B19EC /* PhotoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoLayer.h; sourceTree = "<group>"; };
+		C96F22671C88269F008B19EC /* PhotoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoLayer.m; sourceTree = "<group>"; };
+		C96F22681C88269F008B19EC /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
+		C96F22691C88269F008B19EC /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
+		C96F22711C8826F0008B19EC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C96F22721C8826F0008B19EC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C96F22731C8826F0008B19EC /* Controls.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controls.pch; sourceTree = "<group>"; };
+		C96F22741C8826F0008B19EC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Root/main.m; sourceTree = "<group>"; };
+		C96F22751C8826F0008B19EC /* Main.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.Storyboard; path = Root/Main.Storyboard; sourceTree = "<group>"; };
+		C96F22761C8826F0008B19EC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		C96F22771C8826F0008B19EC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		C96F227C1C882794008B19EC /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		C96F227D1C882794008B19EC /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		C96F227F1C8827A4008B19EC /* ScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanViewController.xib; sourceTree = "<group>"; };
 		CD32A4E61ADE05ED7E97B0BA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,15 +115,12 @@
 		184FAADB1C521ABA00DC9920 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				184FAADF1C521ABA00DC9920 /* AppDelegate.h */,
-				184FAAE01C521ABA00DC9920 /* AppDelegate.m */,
-				C9C6231B1C5F2B82008BD2DC /* MainViewController.h */,
-				C9C6231C1C5F2B82008BD2DC /* MainViewController.m */,
+				C96F22701C8826F0008B19EC /* Root */,
 				C94BCBB31C72AB4C0092C0BD /* Controller */,
-				18DCD6A71C535962005F5CA1 /* View */,
-				18DCD6A61C535962005F5CA1 /* Model */,
+				C96F225D1C88269F008B19EC /* View */,
+				C96F22591C88268F008B19EC /* Model */,
 				184FAAE81C521ABA00DC9920 /* Assets.xcassets */,
-				C9C623191C5F28D2008BD2DC /* Main.Storyboard */,
+				C96F22751C8826F0008B19EC /* Main.Storyboard */,
 				184FAAEA1C521ABA00DC9920 /* LaunchScreen.storyboard */,
 				184FAADC1C521ABA00DC9920 /* Supporting Files */,
 			);
@@ -122,37 +130,10 @@
 		184FAADC1C521ABA00DC9920 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C94BCBCC1C72B14E0092C0BD /* Controls.pch */,
+				C96F22741C8826F0008B19EC /* main.m */,
 				184FAAED1C521ABA00DC9920 /* Info.plist */,
-				184FAADD1C521ABA00DC9920 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		18DCD6A61C535962005F5CA1 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
-			path = Common/Model;
-			sourceTree = "<group>";
-		};
-		18DCD6A71C535962005F5CA1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C94BCBBE1C72AB8C0092C0BD /* HSPolyline.h */,
-				C94BCBBF1C72AB8C0092C0BD /* HSPolyline.m */,
-				C986070C1C56FA35006BEE13 /* XYPieChart.h */,
-				C986070D1C56FA35006BEE13 /* XYPieChart.m */,
-				C986070F1C56FAC4006BEE13 /* HSPickerView.h */,
-				C98607101C56FAC4006BEE13 /* HSPickerView.m */,
-				C96F1D141C7E9369008B19EC /* HSAnalysisView.h */,
-				C96F1D151C7E9369008B19EC /* HSAnalysisView.m */,
-				18DCD6AF1C536D41005F5CA1 /* HSSegmentView.h */,
-				18DCD6B01C536D41005F5CA1 /* HSSegmentView.m */,
-			);
-			name = View;
-			path = Common/View;
 			sourceTree = "<group>";
 		};
 		2B57A9B2FB811B9D0638D4AC /* Frameworks */ = {
@@ -182,8 +163,51 @@
 				C96F1D111C7E8E10008B19EC /* AnalysisViewController.h */,
 				C96F1D121C7E8E10008B19EC /* AnalysisViewController.m */,
 				C96F1D0E1C7E8C2D008B19EC /* AnalysisViewController.xib */,
+				C96F227C1C882794008B19EC /* ScanViewController.h */,
+				C96F227D1C882794008B19EC /* ScanViewController.m */,
+				C96F227F1C8827A4008B19EC /* ScanViewController.xib */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C96F22591C88268F008B19EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C96F225A1C88268F008B19EC /* HSScaner.h */,
+				C96F225B1C88268F008B19EC /* HSScaner.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C96F225D1C88269F008B19EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C96F225E1C88269F008B19EC /* HSAnalysisView.h */,
+				C96F225F1C88269F008B19EC /* HSAnalysisView.m */,
+				C96F22601C88269F008B19EC /* HSPickerView.h */,
+				C96F22611C88269F008B19EC /* HSPickerView.m */,
+				C96F22621C88269F008B19EC /* HSPolyline.h */,
+				C96F22631C88269F008B19EC /* HSPolyline.m */,
+				C96F22641C88269F008B19EC /* HSSegmentView.h */,
+				C96F22651C88269F008B19EC /* HSSegmentView.m */,
+				C96F22681C88269F008B19EC /* XYPieChart.h */,
+				C96F22691C88269F008B19EC /* XYPieChart.m */,
+				C96F22661C88269F008B19EC /* PhotoLayer.h */,
+				C96F22671C88269F008B19EC /* PhotoLayer.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C96F22701C8826F0008B19EC /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				C96F22711C8826F0008B19EC /* AppDelegate.h */,
+				C96F22721C8826F0008B19EC /* AppDelegate.m */,
+				C96F22731C8826F0008B19EC /* Controls.pch */,
+				C96F22761C8826F0008B19EC /* MainViewController.h */,
+				C96F22771C8826F0008B19EC /* MainViewController.m */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,14 +267,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96F22801C8827A4008B19EC /* ScanViewController.xib in Resources */,
 				C94BCBC51C72AFF70092C0BD /* SegmentViewController.xib in Resources */,
 				184FAAEC1C521ABA00DC9920 /* LaunchScreen.storyboard in Resources */,
 				C94BCBCA1C72B02B0092C0BD /* PolyViewController.xib in Resources */,
+				C96F227A1C8826F0008B19EC /* Main.Storyboard in Resources */,
 				C94BCBBB1C72AB4C0092C0BD /* DatePickerController.xib in Resources */,
 				C94BCBBD1C72AB4C0092C0BD /* PieViewController.xib in Resources */,
 				184FAAE91C521ABA00DC9920 /* Assets.xcassets in Resources */,
 				C96F1D101C7E8C2D008B19EC /* AnalysisViewController.xib in Resources */,
-				C9C6231A1C5F28D2008BD2DC /* Main.Storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,19 +286,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C94BCBC01C72AB8C0092C0BD /* HSPolyline.m in Sources */,
 				C94BCBBA1C72AB4C0092C0BD /* DatePickerController.m in Sources */,
 				C96F1D131C7E8E10008B19EC /* AnalysisViewController.m in Sources */,
-				18DCD6B11C536D41005F5CA1 /* HSSegmentView.m in Sources */,
+				C96F226E1C88269F008B19EC /* PhotoLayer.m in Sources */,
+				C96F227E1C882794008B19EC /* ScanViewController.m in Sources */,
+				C96F226F1C88269F008B19EC /* XYPieChart.m in Sources */,
+				C96F226C1C88269F008B19EC /* HSPolyline.m in Sources */,
+				C96F225C1C88268F008B19EC /* HSScaner.m in Sources */,
 				C94BCBBC1C72AB4C0092C0BD /* PieViewController.m in Sources */,
-				C9C6231D1C5F2B82008BD2DC /* MainViewController.m in Sources */,
-				184FAAE11C521ABA00DC9920 /* AppDelegate.m in Sources */,
-				184FAADE1C521ABA00DC9920 /* main.m in Sources */,
-				C986070E1C56FA35006BEE13 /* XYPieChart.m in Sources */,
+				C96F22781C8826F0008B19EC /* AppDelegate.m in Sources */,
+				C96F226A1C88269F008B19EC /* HSAnalysisView.m in Sources */,
+				C96F226D1C88269F008B19EC /* HSSegmentView.m in Sources */,
+				C96F226B1C88269F008B19EC /* HSPickerView.m in Sources */,
 				C94BCBC41C72AFF70092C0BD /* SegmentViewController.m in Sources */,
-				C96F1D161C7E9369008B19EC /* HSAnalysisView.m in Sources */,
+				C96F22791C8826F0008B19EC /* main.m in Sources */,
+				C96F227B1C8826F0008B19EC /* MainViewController.m in Sources */,
 				C94BCBC91C72B02B0092C0BD /* PolyViewController.m in Sources */,
-				C98607111C56FAC4006BEE13 /* HSPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +405,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/Controls/Controls.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Controls/Root/Controls.pch";
 				INFOPLIST_FILE = Controls/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -394,7 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/Controls/Controls.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Controls/Root/Controls.pch";
 				INFOPLIST_FILE = Controls/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
