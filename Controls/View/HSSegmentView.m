@@ -8,20 +8,20 @@
 
 #import "HSSegmentView.h"
 
-typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
-    HSSegmentButtonItemStateNormal      = 0,    // 正常状态
-    HSSegmentButtonItemStateSelected    = 1     // 选中状态
+typedef NS_ENUM(NSInteger, HSSegmentItemState) {
+    HSSegmentItemStateNormal      = 0,    // 正常状态
+    HSSegmentItemStateSelected    = 1     // 选中状态
 };
 
-@class HSSegmentButtonItem;
+@class HSSegmentItem;
 
-@protocol HSSegmentButtonItemDelegate <NSObject>
+@protocol HSSegmentItemDelegate <NSObject>
 @optional
-- (void)didSelectItem:(HSSegmentButtonItem *)item;
+- (void)didSelectItem:(HSSegmentItem *)item;
 
 @end
 
-@interface HSSegmentButtonItem : UIView
+@interface HSSegmentItem : UIView
 
 @property (strong, nonatomic) UIImageView       *imageView;                 // 图片视图
 @property (strong, nonatomic) UILabel           *textLabel;                 // 文本视图
@@ -40,8 +40,8 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 @property (strong, nonatomic) UIColor           *selectedTextColor;         // 选中时文本颜色
 @property (strong, nonatomic) UIColor           *normalTextColor;           // 正常文本颜色
 
-@property (assign, nonatomic) HSSegmentButtonItemState      state;
-@property (weak, nonatomic) id<HSSegmentButtonItemDelegate> delegate;
+@property (assign, nonatomic) HSSegmentItemState      state;
+@property (weak, nonatomic) id<HSSegmentItemDelegate> delegate;
 
 - (instancetype)initWithTitle:(NSString *)title image:(UIImage *)image;
 - (instancetype)initWithFrame:(CGRect)frame;
@@ -49,8 +49,9 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 
 @end
 
-@implementation HSSegmentButtonItem
+@implementation HSSegmentItem
 
+#pragma mark
 #pragma mark 初始化
 - (instancetype)initWithTitle:(NSString *)title image:(UIImage *)image {
     if (self = [self init]) {
@@ -89,9 +90,11 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
     [self addSubview:self.textLabel];
     [self addSubview:self.lineImageView];
     
-    [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)]];
+    [self addGestureRecognizer:[[UITapGestureRecognizer alloc]
+                                initWithTarget:self action:@selector(tapHandler:)]];
 }
 
+#pragma mark
 #pragma mark 布局
 - (void)layoutSubviews {
     CGFloat width = self.bounds.size.width, height = self.bounds.size.height;
@@ -105,6 +108,7 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
     self.lineImageView.center = CGPointMake(width / 2.0, height - 1.0);
 }
 
+#pragma mark
 #pragma mark 点击事件处理
 - (void)tapHandler:(id)sender {
     if ([self.delegate respondsToSelector:@selector(didSelectItem:)]) {
@@ -112,6 +116,7 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
     }
 }
 
+#pragma mark
 #pragma mark 参数
 - (void)setText:(NSString *)text {
     if (_text == text) return;
@@ -134,7 +139,7 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 - (void)setNormalBackgroundColor:(UIColor *)normalBackgroundColor {
     if (_normalBackgroundColor == normalBackgroundColor) return;
     _normalBackgroundColor = normalBackgroundColor;
-    if (self.state == HSSegmentButtonItemStateNormal) {
+    if (self.state == HSSegmentItemStateNormal) {
         self.imageView.backgroundColor = normalBackgroundColor;
     }
 }
@@ -142,7 +147,7 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 - (void)setSelectedBackgroundColor:(UIColor *)selectedBackgroundColor {
     if (_selectedBackgroundColor == selectedBackgroundColor) return;
     _selectedBackgroundColor = selectedBackgroundColor;
-    if (self.state == HSSegmentButtonItemStateSelected) {
+    if (self.state == HSSegmentItemStateSelected) {
         self.imageView.backgroundColor = selectedBackgroundColor;
     }
 }
@@ -150,7 +155,7 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 - (void)setNormalTextColor:(UIColor *)normalTextColor {
     if (_normalTextColor == normalTextColor) return;
     _normalTextColor = normalTextColor;
-    if (self.state == HSSegmentButtonItemStateNormal) {
+    if (self.state == HSSegmentItemStateNormal) {
         self.textLabel.textColor = normalTextColor;
     }
 }
@@ -158,7 +163,7 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 - (void)setSelectedTextColor:(UIColor *)selectedTextColor {
     if (_selectedTextColor == selectedTextColor) return;
     _selectedTextColor = selectedTextColor;
-    if (self.state == HSSegmentButtonItemStateSelected) {
+    if (self.state == HSSegmentItemStateSelected) {
         self.textLabel.textColor = selectedTextColor;
     }
 }
@@ -166,25 +171,25 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 - (void)setNormalLineColor:(UIColor *)normalLineColor {
     if (_normalLineColor == normalLineColor) return;
     _normalLineColor = normalLineColor;
-    if (self.state == HSSegmentButtonItemStateNormal) {
+    if (self.state == HSSegmentItemStateNormal) {
         self.lineImageView.backgroundColor = normalLineColor;
     }
 }
 - (void)setSelectedLineColor:(UIColor *)selectedLineColor {
     if (_selectedLineColor == selectedLineColor) return;
     _selectedLineColor = selectedLineColor;
-    if (self.state == HSSegmentButtonItemStateSelected) {
+    if (self.state == HSSegmentItemStateSelected) {
         self.lineImageView.backgroundColor = selectedLineColor;
     }
 }
 
-- (void)setState:(HSSegmentButtonItemState)state {
+- (void)setState:(HSSegmentItemState)state {
     _state = state;
-    if (_state == HSSegmentButtonItemStateNormal) {
+    if (_state == HSSegmentItemStateNormal) {
         self.textLabel.textColor = self.normalTextColor;
         self.imageView.backgroundColor = self.normalBackgroundColor;
         self.lineImageView.backgroundColor = self.normalLineColor;
-    } else if (_state == HSSegmentButtonItemStateSelected) {
+    } else if (_state == HSSegmentItemStateSelected) {
         self.textLabel.textColor = self.selectedTextColor;
         self.imageView.backgroundColor = self.selectedBackgroundColor;
         self.lineImageView.backgroundColor = self.selectedLineColor;
@@ -193,14 +198,15 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 
 @end
 
-@interface HSSegmentView () <HSSegmentButtonItemDelegate>
+@interface HSSegmentView () <HSSegmentItemDelegate>
 
-@property (strong, nonatomic) NSArray           *titleArray;            // 标题数组
+@property (strong, nonatomic) NSArray   *titleArray;    // 标题数组
 
 @end
 
 @implementation HSSegmentView
 
+#pragma mark
 #pragma mark 初始化
 - (instancetype)initWithTitles:(NSArray *)titles {
     if (self = [super init]) {
@@ -212,19 +218,28 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 
 - (void)commonInit {
     // 初始化参数
-    self.selectedBackgroundColor = [UIColor colorWithRed:116 / 255.0 green:195 / 255.0 blue:174 / 255.0 alpha:1.0];
+    [self reloadTitles];
+    self.selectedBackgroundColor = [UIColor colorWithRed:116/255.0 green:195/255.0 blue:174/255.0 alpha:1.0];
     self.normalBackgroundColor = [UIColor whiteColor];
     self.selectedTextColor = [UIColor whiteColor];
     self.normalTextColor = [UIColor grayColor];
-    [self initSegments];
 }
-
-- (void)initSegments {
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
+- (void)setTitles:(NSArray *)titles {
+    self.titleArray = [titles copy];
+    [self reloadTitles];
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+}
+- (void)reloadTitles {
+    NSInteger number = self.titleArray.count;
+    NSArray *subArray = self.subviews;
+    for (int i = (int)subArray.count - 1; i >= number; -- i) {
+        [[subArray objectAtIndex:i] removeFromSuperview];
     }
-    for (NSString *text in self.titleArray) {
-        HSSegmentButtonItem *item = [[HSSegmentButtonItem alloc] initWithTitle:text image:nil];
+    
+    subArray = self.subviews;
+    for (int i = subArray.count; i < number; ++ i) {
+        HSSegmentItem *item = [[HSSegmentItem alloc] init];
         item.selectedBackgroundColor = self.selectedBackgroundColor;
         item.normalBackgroundColor = self.normalBackgroundColor;
         item.selectedTextColor = self.selectedTextColor;
@@ -232,20 +247,21 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
         item.selectedLineColor = self.selectedLineColor;
         item.normalLineColor = self.normalLineColor;
         item.font = self.font;
-        item.text = text;
-
         item.delegate = self;
         [self addSubview:item];
     }
+    
+    if (number < 1) return;
+    
+    subArray = self.subviews;
+    for (int i = 0; i < subArray.count; ++ i) {
+        NSString *title = [self.titleArray objectAtIndex:i];
+        HSSegmentItem *item = [subArray objectAtIndex:i];
+        item.text = title;
+    }
 }
 
-- (void)setTitles:(NSArray *)titles {
-    self.titleArray = titles;
-    [self initSegments];
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
-}
-
+#pragma mark
 #pragma mark 布局
 - (void)layoutSubviews {
     CGFloat width = self.subviews.count > 0 ? self.bounds.size.width / self.subviews.count : 0;
@@ -257,8 +273,9 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
     }
 }
 
+#pragma mark
 #pragma mark 代理
-- (void)didSelectItem:(HSSegmentButtonItem *)item {
+- (void)didSelectItem:(HSSegmentItem *)item {
     NSInteger selectedIndex = [self.subviews indexOfObject:item];
     self.selectedIndex = selectedIndex;
     if ([self.delegate respondsToSelector:@selector(segmentView:itemSelectedAtIndex:)]) {
@@ -266,11 +283,12 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
     }
 }
 
+#pragma mark
 #pragma mark 参数
 - (void)setNormalBackgroundColor:(UIColor *)normalBackgroundColor {
     if (_normalBackgroundColor == normalBackgroundColor) return;
     _normalBackgroundColor = normalBackgroundColor;
-    for (HSSegmentButtonItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.subviews) {
         item.normalBackgroundColor = normalBackgroundColor;
     }
 }
@@ -278,7 +296,7 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 - (void)setSelectedBackgroundColor:(UIColor *)selectedBackgroundColor {
     if (_selectedBackgroundColor == selectedBackgroundColor) return;
     _selectedBackgroundColor = selectedBackgroundColor;
-    for (HSSegmentButtonItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.subviews) {
         item.selectedBackgroundColor = selectedBackgroundColor;
     }
 }
@@ -286,7 +304,7 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 - (void)setNormalTextColor:(UIColor *)normalTextColor {
     if (_normalTextColor == normalTextColor) return;
     _normalTextColor = normalTextColor;
-    for (HSSegmentButtonItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.subviews) {
         item.normalTextColor = normalTextColor;
     }
 }
@@ -294,7 +312,7 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 - (void)setSelectedTextColor:(UIColor *)selectedTextColor {
     if (_selectedTextColor == selectedTextColor) return;
     _selectedTextColor = selectedTextColor;
-    for (HSSegmentButtonItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.subviews) {
         item.selectedTextColor = selectedTextColor;
     }
 }
@@ -302,14 +320,14 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 - (void)setNormalLineColor:(UIColor *)normalLineColor {
     if (_normalLineColor == normalLineColor) return;
     _normalLineColor = normalLineColor;
-    for (HSSegmentButtonItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.subviews) {
         item.normalLineColor = normalLineColor;
     }
 }
 - (void)setSelectedLineColor:(UIColor *)selectedLineColor {
     if (_selectedLineColor == selectedLineColor) return;
     _selectedLineColor = selectedLineColor;
-    for (HSSegmentButtonItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.subviews) {
         item.selectedLineColor = selectedLineColor;
     }
 }
@@ -317,39 +335,40 @@ typedef NS_ENUM(NSInteger, HSSegmentButtonItemState) {
 - (void)setFont:(UIFont *)font {
     if (_font == font) return;
     _font = font;
-    for (HSSegmentButtonItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.subviews) {
         item.font = font;
     }
 }
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex {
     if (selectedIndex >= self.subviews.count || selectedIndex < 0) return;
-    HSSegmentButtonItem *oldItem = [self.subviews objectAtIndex:_selectedIndex];
-    oldItem.state = HSSegmentButtonItemStateNormal;
-    HSSegmentButtonItem *item = [self.subviews objectAtIndex:selectedIndex];
-    item.state = HSSegmentButtonItemStateSelected;
+    HSSegmentItem *oldItem = [self.subviews objectAtIndex:_selectedIndex];
+    oldItem.state = HSSegmentItemStateNormal;
+    HSSegmentItem *item = [self.subviews objectAtIndex:selectedIndex];
+    item.state = HSSegmentItemStateSelected;
     _selectedIndex = selectedIndex;
 }
 
-#pragma 配置
+#pragma mark
+#pragma mark 配置
 - (void)setImage:(UIImage *)image forItemAtIndex:(NSInteger)index {
     if (index >= self.subviews.count || index < 0) return;
-    HSSegmentButtonItem *item = [self.subviews objectAtIndex:index];
+    HSSegmentItem *item = [self.subviews objectAtIndex:index];
     item.image = image;
 }
-- (UIImage *)imageForItemAtIndex:(NSInteger)index {
+- (UIImage *)imageOfItemAtIndex:(NSInteger)index {
     if (index >= self.subviews.count || index < 0) return nil;
-    HSSegmentButtonItem *item = [self.subviews objectAtIndex:index];
+    HSSegmentItem *item = [self.subviews objectAtIndex:index];
     return item.image;
 }
 - (void)setTitle:(NSString *)title forItemAtIndex:(NSInteger)index {
     if (index >= self.subviews.count || index < 0) return;
-    HSSegmentButtonItem *item = [self.subviews objectAtIndex:index];
+    HSSegmentItem *item = [self.subviews objectAtIndex:index];
     item.text = title;
 }
-- (NSString *)titleForItemAtIndex:(NSInteger)index {
+- (NSString *)titleOfItemAtIndex:(NSInteger)index {
     if (index >= self.subviews.count || index < 0) return nil;
-    HSSegmentButtonItem *item = [self.subviews objectAtIndex:index];
+    HSSegmentItem *item = [self.subviews objectAtIndex:index];
     return item.text;
 }
 

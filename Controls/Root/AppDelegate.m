@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NSDate+Extension.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSDate *now = [NSDate date];
+    NSDate *utc = [now GMT];
+    
+    NSDateFormatter *dateFormatter = [NSDate defaultFormatter];
+    NSLog(@"now : %@", [dateFormatter stringFromDate:now]);
+    NSLog(@"utc : %@", [dateFormatter stringFromDate:utc]);
+    NSLog(@"now time interval %.0f, utc time interval = %.0f, offset = %.0f",
+          [now timeIntervalSince1970], [utc timeIntervalSince1970], 8.0 * 3600);
+    
     return YES;
 }
 
