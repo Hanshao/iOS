@@ -349,27 +349,9 @@ typedef NS_ENUM(NSInteger, HSSegmentItemState) {
     _selectedIndex = selectedIndex;
 }
 
-#pragma mark
-#pragma mark 配置
-- (void)setImage:(UIImage *)image forItemAtIndex:(NSInteger)index {
-    if (index >= self.subviews.count || index < 0) return;
-    HSSegmentItem *item = [self.subviews objectAtIndex:index];
-    item.image = image;
-}
-- (UIImage *)imageOfItemAtIndex:(NSInteger)index {
-    if (index >= self.subviews.count || index < 0) return nil;
-    HSSegmentItem *item = [self.subviews objectAtIndex:index];
-    return item.image;
-}
-- (void)setTitle:(NSString *)title forItemAtIndex:(NSInteger)index {
-    if (index >= self.subviews.count || index < 0) return;
-    HSSegmentItem *item = [self.subviews objectAtIndex:index];
-    item.text = title;
-}
-- (NSString *)titleOfItemAtIndex:(NSInteger)index {
-    if (index >= self.subviews.count || index < 0) return nil;
-    HSSegmentItem *item = [self.subviews objectAtIndex:index];
-    return item.text;
+- (NSString *)titleAtIndex:(NSInteger)index {
+    if (index < 0 || index >= self.titleArray.count) return nil;
+    return [self.titleArray objectAtIndex:index];
 }
 
 @end

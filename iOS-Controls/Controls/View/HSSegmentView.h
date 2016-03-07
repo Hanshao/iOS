@@ -37,9 +37,6 @@
 @property (assign, nonatomic) NSInteger     selectedIndex;              // 选中行的
 @property (weak, nonatomic) id<HSSegmentViewDelegate>       delegate;   // 代理
 
-- (void)setImage:(UIImage *)image forItemAtIndex:(NSInteger)index;
-- (UIImage *)imageOfItemAtIndex:(NSInteger)index;
-- (void)setTitle:(NSString *)title forItemAtIndex:(NSInteger)index;
-- (NSString *)titleOfItemAtIndex:(NSInteger)index;
+- (NSString *)titleAtIndex:(NSInteger)index;
 
 @end

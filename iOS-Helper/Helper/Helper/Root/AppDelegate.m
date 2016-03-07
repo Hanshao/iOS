@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  YiMaoAgent
+//  Helper
 //
-//  Created by Apple on 16/1/22.
-//  Copyright © 2016年 oubuy·luo. All rights reserved.
+//  Created by Shaojun Han on 3/7/16.
+//  Copyright © 2016 Hadlinks. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -17,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     return YES;
 }
 

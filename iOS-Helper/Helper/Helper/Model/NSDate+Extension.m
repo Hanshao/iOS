@@ -8,7 +8,7 @@
 
 #import "NSDate+Extension.h"
 
-@implementation NSDate (Extension)
+@implementation NSDate (GMT)
 
 // 将本时间转换成UTC(GMT)时间
 - (NSDate *)GMT {
@@ -35,14 +35,21 @@
     return [NSDate dateWithTimeInterval:timeInterval sinceDate:now];
 }
 
+@end
+
+
+@implementation NSDate (Formatter)
+
+// 可复用
+static NSDateFormatter *formatter = nil;
+
 // date formatter(yyyy/MM/dd hh:mm:ss)
 + (NSDateFormatter *)defaultFormatter {
-    static NSDateFormatter *formatter = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy/MM/dd hh:mm:ssZ"];
     });
+    [formatter setDateFormat:@"yyyy/MM/dd hh:mm:ssZ"];
     return formatter;
 }
 

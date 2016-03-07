@@ -17,7 +17,6 @@
 		C94BCBC51C72AFF70092C0BD /* SegmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBC31C72AFF70092C0BD /* SegmentViewController.xib */; };
 		C94BCBC91C72B02B0092C0BD /* PolyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBC71C72B02B0092C0BD /* PolyViewController.m */; };
 		C94BCBCA1C72B02B0092C0BD /* PolyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBC81C72B02B0092C0BD /* PolyViewController.xib */; };
-		C95021801C8AB8B5007C44F4 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C950217F1C8AB8B5007C44F4 /* NSDate+Extension.m */; };
 		C96F1D101C7E8C2D008B19EC /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96F1D0E1C7E8C2D008B19EC /* AnalysisViewController.xib */; };
 		C96F1D131C7E8E10008B19EC /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F1D121C7E8E10008B19EC /* AnalysisViewController.m */; };
 		C96F222F1C869587008B19EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F222E1C869587008B19EC /* QuartzCore.framework */; };
@@ -53,8 +52,6 @@
 		C94BCBC61C72B02B0092C0BD /* PolyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolyViewController.h; sourceTree = "<group>"; };
 		C94BCBC71C72B02B0092C0BD /* PolyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolyViewController.m; sourceTree = "<group>"; };
 		C94BCBC81C72B02B0092C0BD /* PolyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PolyViewController.xib; sourceTree = "<group>"; };
-		C950217E1C8AB8B5007C44F4 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
-		C950217F1C8AB8B5007C44F4 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		C96F1D0E1C7E8C2D008B19EC /* AnalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
 		C96F1D111C7E8E10008B19EC /* AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisViewController.h; sourceTree = "<group>"; };
 		C96F1D121C7E8E10008B19EC /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisViewController.m; sourceTree = "<group>"; };
@@ -178,8 +175,6 @@
 			children = (
 				C96F225A1C88268F008B19EC /* HSScaner.h */,
 				C96F225B1C88268F008B19EC /* HSScaner.m */,
-				C950217E1C8AB8B5007C44F4 /* NSDate+Extension.h */,
-				C950217F1C8AB8B5007C44F4 /* NSDate+Extension.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,7 +302,6 @@
 				C96F22791C8826F0008B19EC /* main.m in Sources */,
 				C96F227B1C8826F0008B19EC /* MainViewController.m in Sources */,
 				C94BCBC91C72B02B0092C0BD /* PolyViewController.m in Sources */,
-				C95021801C8AB8B5007C44F4 /* NSDate+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

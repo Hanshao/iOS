@@ -42,7 +42,7 @@
     if (view == self.segmentView1) {
         NSLog(@"%d", (int)index);
     } else {
-        NSLog(@"%@", [view titleOfItemAtIndex:index]);
+        NSLog(@"%@", [view titleAtIndex:index]);
     }
 }
 
