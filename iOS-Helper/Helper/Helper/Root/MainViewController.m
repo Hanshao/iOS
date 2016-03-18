@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "DateExtViewController.h"
+#import "ColorExtViewController.h"
 
 @interface MainViewController ()
 
@@ -19,13 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.actionArray = @[@"enterDateExtPage"];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.actionArray = @[@"enterDateExtPage", @"enterColorExtPage"];
 }
 
 #pragma mark - Table view data source
@@ -45,6 +40,9 @@
 
 - (void)enterDateExtPage {
     [self.navigationController pushViewController:[DateExtViewController new] animated:YES];
+}
+- (void)enterColorExtPage {
+    [self.navigationController pushViewController:[ColorExtViewController new] animated:YES];
 }
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C930352C1C9A96BC00482D36 /* ColorExtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C930352A1C9A96BC00482D36 /* ColorExtViewController.m */; };
+		C930352D1C9A96BC00482D36 /* ColorExtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C930352B1C9A96BC00482D36 /* ColorExtViewController.xib */; };
 		C950218F1C8D5787007C44F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C950218E1C8D5787007C44F4 /* main.m */; };
 		C95021981C8D5787007C44F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95021961C8D5787007C44F4 /* Main.storyboard */; };
 		C950219A1C8D5787007C44F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95021991C8D5787007C44F4 /* Assets.xcassets */; };
@@ -24,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C93035291C9A96BC00482D36 /* ColorExtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorExtViewController.h; sourceTree = "<group>"; };
+		C930352A1C9A96BC00482D36 /* ColorExtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorExtViewController.m; sourceTree = "<group>"; };
+		C930352B1C9A96BC00482D36 /* ColorExtViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorExtViewController.xib; sourceTree = "<group>"; };
 		C950218A1C8D5787007C44F4 /* Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C950218E1C8D5787007C44F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C95021971C8D5787007C44F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +141,9 @@
 				C95021F01C8D629A007C44F4 /* DateExtViewController.h */,
 				C95021F11C8D629A007C44F4 /* DateExtViewController.m */,
 				C95021F21C8D629A007C44F4 /* DateExtViewController.xib */,
+				C93035291C9A96BC00482D36 /* ColorExtViewController.h */,
+				C930352A1C9A96BC00482D36 /* ColorExtViewController.m */,
+				C930352B1C9A96BC00482D36 /* ColorExtViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -209,6 +217,7 @@
 				C95021F41C8D629A007C44F4 /* DateExtViewController.xib in Resources */,
 				C950219D1C8D5787007C44F4 /* LaunchScreen.storyboard in Resources */,
 				C950219A1C8D5787007C44F4 /* Assets.xcassets in Resources */,
+				C930352D1C9A96BC00482D36 /* ColorExtViewController.xib in Resources */,
 				C95021981C8D5787007C44F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +239,7 @@
 				C95022531C8D7A42007C44F4 /* UIColor+Extension.m in Sources */,
 				C950218F1C8D5787007C44F4 /* main.m in Sources */,
 				C950224C1C8D7906007C44F4 /* UIImage+Extension.m in Sources */,
+				C930352C1C9A96BC00482D36 /* ColorExtViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

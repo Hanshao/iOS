@@ -11,11 +11,14 @@
 /**
  * 拓展(UIColor)
  * 1. 便利构造
+ * 2.
  */
-@interface UIColor (Instance)
 
+UIColor* RGB(UInt8 red, UInt8 green, UInt8 blue);
+UIColor* RGBA(UInt8 red, UInt8 green, UInt8 blue, UInt8 alpha);
+
+@interface UIColor (Instance)
 + (instancetype)RGBA:(unsigned long)rgba;
 + (instancetype)RGB:(unsigned long)rgb;
-
 @end
 

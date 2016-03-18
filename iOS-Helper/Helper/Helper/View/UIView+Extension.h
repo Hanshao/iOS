@@ -13,8 +13,6 @@
  * 1. 截屏
  */
 @interface UIView (ShotImage)
-
 // 截屏
 - (UIImage *)shotImage;
-
 @end

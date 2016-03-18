@@ -4,7 +4,7 @@
 //
 //  Created by Shaojun Han on 9/8/15.
 //  Copyright (c) 2015 HadLinks. All rights reserved.
-//
+//  0.1.1 稳定版
 
 #import <UIKit/UIKit.h>
 
@@ -15,7 +15,6 @@
 @protocol HSSegmentViewDelegate <NSObject>
 @optional
 - (void)segmentView:(HSSegmentView *)view itemSelectedAtIndex:(NSInteger)index;
-
 @end
 
 /**
@@ -38,5 +37,6 @@
 @property (weak, nonatomic) id<HSSegmentViewDelegate>       delegate;   // 代理
 
 - (NSString *)titleAtIndex:(NSInteger)index;
+- (void)setTitle:(NSString *)title atIndex:(NSInteger)index;
 
 @end

@@ -10,9 +10,11 @@
 #import "PieViewController.h"
 #import "DatePickerController.h"
 #import "SegmentViewController.h"
-#import "PolyViewController.h"
 #import "AnalysisViewController.h"
 #import "ScanViewController.h"
+#import "FlatButtonViewController.h"
+#import "SlideViewController.h"
+#import "CircleViewController.h"
 
 @interface MainViewController ()
 
@@ -25,8 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.actionArray = [NSMutableArray array];
-    [self.actionArray addObject:@[@"enterPiePage", @"enterDatePickerPage", @"enterSegmentPage",
-                                  @"enterPolyPage", @"enterAnalysisPage", @"enterQRScanPage"]];
+    [self.actionArray addObject:@[@"enterPiePage", @"enterDatePickerPage", @"enterSegmentPage", @"enterAnalysisPage", @"enterQRScanPage", @"enterFlatButtonPage", @"enterSlidePage", @"enterCirclePage"]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -44,14 +45,19 @@
 - (void)enterSegmentPage {
     [self.navigationController pushViewController:[SegmentViewController new] animated:YES];
 }
-- (void)enterPolyPage {
-    [self.navigationController pushViewController:[PolyViewController new] animated:YES];
-}
 - (void)enterAnalysisPage {
     [self.navigationController pushViewController:[AnalysisViewController new] animated:YES];
 }
 - (void)enterQRScanPage {
     [self.navigationController presentViewController:[ScanViewController new] animated:YES completion:nil];
 }
-
+- (void)enterFlatButtonPage {
+    [self.navigationController pushViewController:[FlatButtonViewController new] animated:YES];
+}
+- (void)enterSlidePage {
+    [self.navigationController pushViewController:[SlideViewController new] animated:YES];
+}
+- (void)enterCirclePage {
+    [self.navigationController pushViewController:[CircleViewController new] animated:YES];
+}
 @end

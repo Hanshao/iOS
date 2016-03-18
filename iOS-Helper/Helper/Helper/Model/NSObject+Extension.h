@@ -13,9 +13,7 @@
  * 1. KVC保护
  */
 @interface NSObject (KVCSafe)
-
+// KVC保护
 - (void)setNilValueForKey:(NSString *)key;
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key;
-
-
 @end

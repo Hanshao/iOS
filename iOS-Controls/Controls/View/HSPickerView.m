@@ -101,12 +101,13 @@ static CGFloat ACTIVE_DISTANCE = 200.0;
 @property (strong, nonatomic) NSMutableArray *layerArray;
 @property (strong, nonatomic) NSMutableArray *rowArray;
 
-@property (strong, nonatomic) UIColor *colorOfCircle;   // 默认圆环颜色
-@property (strong, nonatomic) UIColor *colorOfBackground;   // 默认每列背景色
+@property (strong, nonatomic) UIColor *circleColor;   // 默认圆环颜色
+@property (strong, nonatomic) UIColor *itemColor;   // 默认每列背景色
 @property (assign, nonatomic) CGFloat rowHeight;    // 默认行高
 
 @end
 
+// 重用ID，和UICollectionViewCell上的子视图label的tag值
 static NSString *CellReuseID = @"ReuseID";
 static NSInteger CellSubViewIndicator = 1200;
 
@@ -116,6 +117,7 @@ static NSInteger CellSubViewIndicator = 1200;
  * 刷新视图
  */
 - (void)reloadAllComponents {
+    [self recreateAllComponents];
     for (HSPickerScrollView *scrollView in self.pickerArray) {
         [scrollView reloadData];
     }
@@ -158,26 +160,47 @@ static NSInteger CellSubViewIndicator = 1200;
 /**
  * 初始化
  */
-- (void)drawRect:(CGRect)rect {
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (!(self = [super initWithFrame:frame])) return self;
     [self initialize];
+    return self;
+}
+- (instancetype)init {
+    return [self initWithFrame:CGRectZero];
 }
 - (void)initialize {
+    self.rowArray = [NSMutableArray array];
+    self.layerArray = [NSMutableArray array];
+    self.pickerArray = [NSMutableArray array];
     // 初始颜色值
-    if (!self.normalTitleColor) self.normalTitleColor = [UIColor blackColor];
-    self.colorOfCircle = [UIColor colorWithRed:29/255.0 green:174/255.0 blue:236/255.0 alpha:1.0];
-    self.colorOfBackground = [UIColor whiteColor];
+    self.circleColor = [UIColor colorWithRed:29/255.0 green:174/255.0 blue:236/255.0 alpha:1.0];
+    self.normalTitleColor = [UIColor blackColor];
+    self.itemColor = [UIColor whiteColor];
     self.rowHeight = 44.0f;
-    
-    NSInteger numberOfComponents = 1;
-    if ([self.delegate respondsToSelector:@selector(numberOfComponentsOfPickerView:)]) {
+}
+
+- (void)recreateAllComponents {
+    NSInteger numberOfComponents = 0;
+    if ([self.delegate respondsToSelector:@selector(numberOfComponentsOfPickerView:)])
          numberOfComponents = [self.delegate numberOfComponentsOfPickerView:self];
-    }
-    self.rowArray = [NSMutableArray arrayWithCapacity:numberOfComponents];
-    self.layerArray = [NSMutableArray arrayWithCapacity:numberOfComponents];
-    self.pickerArray = [NSMutableArray arrayWithCapacity:numberOfComponents];
-    CGSize size = self.bounds.size; CGFloat unit = size.width / numberOfComponents, total = 0;
-    for (int i = 0; i < numberOfComponents; ++ i) {
+    
+    for (int i = (int)self.pickerArray.count - 1; i >= numberOfComponents; -- i) {
+        HSPickerScrollView *collectionView = [self.pickerArray objectAtIndex:i];
+        [collectionView removeFromSuperview];
+
+        CAShapeLayer *layer = [self.layerArray objectAtIndex:i];
+        [layer removeFromSuperlayer];
         
+        [self.pickerArray removeObjectAtIndex:i];
+        [self.layerArray removeObjectAtIndex:i];
+        [self.rowArray removeObjectAtIndex:i];
+    }
+    
+    if (numberOfComponents < 1) return;
+    
+    CGSize size = self.bounds.size;
+    CGFloat unit = size.width / numberOfComponents, total = 0;
+    for (int i = (int)self.pickerArray.count; i < numberOfComponents; ++ i, total += unit) {
         HSPickerScrollLayout *layout = [[HSPickerScrollLayout alloc] init]; layout.minimumLineSpacing = 20;
         CGRect rectangle = CGRectMake(total, 0, unit, size.height);
         layout.sectionInset = UIEdgeInsetsMake(10, 0, 10, 0);
@@ -188,7 +211,7 @@ static NSInteger CellSubViewIndicator = 1200;
         if ([self.delegate respondsToSelector:@selector(pickerView:backgroundColorOfComponent:)]) {
             pickerScrollView.backgroundColor = [self.delegate pickerView:self backgroundColorOfComponent:i];
         } else {
-            pickerScrollView.backgroundColor = self.colorOfBackground;
+            pickerScrollView.backgroundColor = self.itemColor;
         }
         
         [pickerScrollView registerClass:UICollectionViewCell.class forCellWithReuseIdentifier:CellReuseID];
@@ -209,12 +232,10 @@ static NSInteger CellSubViewIndicator = 1200;
         if ([self.delegate respondsToSelector:@selector(pickerView:colorOfComponent:)]) {
             layer.borderColor = [self.delegate pickerView:self colorOfComponent:i].CGColor;
         } else {    // 默认颜色
-            layer.borderColor = self.colorOfCircle.CGColor;
+            layer.borderColor = self.circleColor.CGColor;
         }
         [self.layer addSublayer:layer];
         [self.layerArray addObject:layer];
-        
-        total += unit;
     }
 }
 
@@ -223,9 +244,11 @@ static NSInteger CellSubViewIndicator = 1200;
  */
 - (void)layoutSubviews {
     NSInteger numberOfComponents = self.pickerArray.count;
-    CGSize size = self.bounds.size; CGFloat unit = size.width / numberOfComponents, total = 0;
+    if (numberOfComponents < 1) return;
     
-    for (int i = 0; i < numberOfComponents; ++ i) {
+    CGSize size = self.bounds.size;
+    CGFloat unit = size.width / numberOfComponents, total = 0;
+    for (int i = 0; i < numberOfComponents; ++ i, total += unit) {
         
         HSPickerScrollView *pickerScrollView = [self.pickerArray objectAtIndex:i];
         pickerScrollView.frame = CGRectMake(total, 0, unit, size.height);
@@ -242,8 +265,6 @@ static NSInteger CellSubViewIndicator = 1200;
         CGFloat height = unit - 16 > size.height/2.0 ? size.height/2.0 : unit - 16;
         layer.frame = CGRectMake(total + (unit - height)/2, (size.height - height)/2, height, height);
         layer.cornerRadius = height / 2.0;
-        
-        total += unit;
      }
 }
 
@@ -296,7 +317,7 @@ static NSInteger CellSubViewIndicator = 1200;
     } else if ([self.delegate respondsToSelector:@selector(pickerView:colorOfComponent:)]) {
         label.textColor = [self.delegate pickerView:self colorOfComponent:component];
     } else {
-        label.textColor = self.colorOfCircle;
+        label.textColor = self.circleColor;
     }
     return cell;
 }
@@ -340,7 +361,7 @@ static NSInteger CellSubViewIndicator = 1200;
         if ([self.delegate respondsToSelector:@selector(pickerView:colorOfComponent:)]) {
             label.textColor = [self.delegate pickerView:self colorOfComponent:component];
         } else {
-            label.textColor = self.colorOfCircle;
+            label.textColor = self.circleColor;
         }
     }
     if ([self.delegate respondsToSelector:@selector(pickerView:didSelectRow:ofComponent:)]) {

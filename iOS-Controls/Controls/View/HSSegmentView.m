@@ -198,19 +198,32 @@ typedef NS_ENUM(NSInteger, HSSegmentItemState) {
 
 @end
 
-@interface HSSegmentView () <HSSegmentItemDelegate>
-
-@property (strong, nonatomic) NSArray   *titleArray;    // 标题数组
-
+@interface HSSegmentView ()
+<
+    HSSegmentItemDelegate
+>
+@property (strong, nonatomic) NSMutableArray *itemViews;
 @end
 
 @implementation HSSegmentView
 
 #pragma mark
 #pragma mark 初始化
-- (instancetype)initWithTitles:(NSArray *)titles {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        self.itemViews = [NSMutableArray array];
+    }
+    return self;
+}
+- (instancetype)init {
     if (self = [super init]) {
-        self.titleArray = [titles copy];
+        self.itemViews = [NSMutableArray array];
+    }
+    return self;
+}
+- (instancetype)initWithTitles:(NSArray *)titles {
+    if (self = [self init]) {
+        [self reloadTitles:titles];
         [self commonInit];
     }
     return self;
@@ -218,27 +231,25 @@ typedef NS_ENUM(NSInteger, HSSegmentItemState) {
 
 - (void)commonInit {
     // 初始化参数
-    [self reloadTitles];
     self.selectedBackgroundColor = [UIColor colorWithRed:116/255.0 green:195/255.0 blue:174/255.0 alpha:1.0];
     self.normalBackgroundColor = [UIColor whiteColor];
     self.selectedTextColor = [UIColor whiteColor];
     self.normalTextColor = [UIColor grayColor];
 }
 - (void)setTitles:(NSArray *)titles {
-    self.titleArray = [titles copy];
-    [self reloadTitles];
+    [self reloadTitles:titles];
     [self setNeedsLayout];
     [self layoutIfNeeded];
 }
-- (void)reloadTitles {
-    NSInteger number = self.titleArray.count;
-    NSArray *subArray = self.subviews;
+- (void)reloadTitles:(NSArray *)titles {
+    NSInteger number = titles.count;
+    NSMutableArray *subArray = self.itemViews;
     for (int i = (int)subArray.count - 1; i >= number; -- i) {
         [[subArray objectAtIndex:i] removeFromSuperview];
+        [subArray removeObjectAtIndex:i];
     }
     
-    subArray = self.subviews;
-    for (int i = subArray.count; i < number; ++ i) {
+    for (int i = (int)subArray.count; i < number; ++ i) {
         HSSegmentItem *item = [[HSSegmentItem alloc] init];
         item.selectedBackgroundColor = self.selectedBackgroundColor;
         item.normalBackgroundColor = self.normalBackgroundColor;
@@ -248,14 +259,14 @@ typedef NS_ENUM(NSInteger, HSSegmentItemState) {
         item.normalLineColor = self.normalLineColor;
         item.font = self.font;
         item.delegate = self;
+        [subArray addObject:item];
         [self addSubview:item];
     }
     
     if (number < 1) return;
     
-    subArray = self.subviews;
     for (int i = 0; i < subArray.count; ++ i) {
-        NSString *title = [self.titleArray objectAtIndex:i];
+        NSString *title = [titles objectAtIndex:i];
         HSSegmentItem *item = [subArray objectAtIndex:i];
         item.text = title;
     }
@@ -266,7 +277,7 @@ typedef NS_ENUM(NSInteger, HSSegmentItemState) {
 - (void)layoutSubviews {
     CGFloat width = self.subviews.count > 0 ? self.bounds.size.width / self.subviews.count : 0;
     CGFloat height = self.bounds.size.height, x = 0;
-    for (UIView *view in self.subviews) {
+    for (UIView *view in self.itemViews) {
         view.bounds = CGRectMake(0, 0, width, height);
         view.center = CGPointMake(width / 2 + x , height / 2);
         x += width;
@@ -276,7 +287,7 @@ typedef NS_ENUM(NSInteger, HSSegmentItemState) {
 #pragma mark
 #pragma mark 代理
 - (void)didSelectItem:(HSSegmentItem *)item {
-    NSInteger selectedIndex = [self.subviews indexOfObject:item];
+    NSInteger selectedIndex = [self.itemViews indexOfObject:item];
     self.selectedIndex = selectedIndex;
     if ([self.delegate respondsToSelector:@selector(segmentView:itemSelectedAtIndex:)]) {
         [self.delegate segmentView:self itemSelectedAtIndex:self.selectedIndex];
@@ -288,7 +299,7 @@ typedef NS_ENUM(NSInteger, HSSegmentItemState) {
 - (void)setNormalBackgroundColor:(UIColor *)normalBackgroundColor {
     if (_normalBackgroundColor == normalBackgroundColor) return;
     _normalBackgroundColor = normalBackgroundColor;
-    for (HSSegmentItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.itemViews) {
         item.normalBackgroundColor = normalBackgroundColor;
     }
 }
@@ -296,7 +307,7 @@ typedef NS_ENUM(NSInteger, HSSegmentItemState) {
 - (void)setSelectedBackgroundColor:(UIColor *)selectedBackgroundColor {
     if (_selectedBackgroundColor == selectedBackgroundColor) return;
     _selectedBackgroundColor = selectedBackgroundColor;
-    for (HSSegmentItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.itemViews) {
         item.selectedBackgroundColor = selectedBackgroundColor;
     }
 }
@@ -304,7 +315,7 @@ typedef NS_ENUM(NSInteger, HSSegmentItemState) {
 - (void)setNormalTextColor:(UIColor *)normalTextColor {
     if (_normalTextColor == normalTextColor) return;
     _normalTextColor = normalTextColor;
-    for (HSSegmentItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.itemViews) {
         item.normalTextColor = normalTextColor;
     }
 }
@@ -312,7 +323,7 @@ typedef NS_ENUM(NSInteger, HSSegmentItemState) {
 - (void)setSelectedTextColor:(UIColor *)selectedTextColor {
     if (_selectedTextColor == selectedTextColor) return;
     _selectedTextColor = selectedTextColor;
-    for (HSSegmentItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.itemViews) {
         item.selectedTextColor = selectedTextColor;
     }
 }
@@ -320,26 +331,24 @@ typedef NS_ENUM(NSInteger, HSSegmentItemState) {
 - (void)setNormalLineColor:(UIColor *)normalLineColor {
     if (_normalLineColor == normalLineColor) return;
     _normalLineColor = normalLineColor;
-    for (HSSegmentItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.itemViews) {
         item.normalLineColor = normalLineColor;
     }
 }
 - (void)setSelectedLineColor:(UIColor *)selectedLineColor {
     if (_selectedLineColor == selectedLineColor) return;
     _selectedLineColor = selectedLineColor;
-    for (HSSegmentItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.itemViews) {
         item.selectedLineColor = selectedLineColor;
     }
 }
-
 - (void)setFont:(UIFont *)font {
     if (_font == font) return;
     _font = font;
-    for (HSSegmentItem *item in self.subviews) {
+    for (HSSegmentItem *item in self.itemViews) {
         item.font = font;
     }
 }
-
 - (void)setSelectedIndex:(NSInteger)selectedIndex {
     if (selectedIndex >= self.subviews.count || selectedIndex < 0) return;
     HSSegmentItem *oldItem = [self.subviews objectAtIndex:_selectedIndex];
@@ -350,8 +359,14 @@ typedef NS_ENUM(NSInteger, HSSegmentItemState) {
 }
 
 - (NSString *)titleAtIndex:(NSInteger)index {
-    if (index < 0 || index >= self.titleArray.count) return nil;
-    return [self.titleArray objectAtIndex:index];
+    if (index < 0 || index >= self.itemViews.count) return nil;
+    HSSegmentItem *item = [self.itemViews objectAtIndex:index];
+    return item.textLabel.text;
+}
+- (void)setTitle:(NSString *)title atIndex:(NSInteger)index {
+    if (index < 0 || index >= self.itemViews.count) return;
+    HSSegmentItem *item = [self.itemViews objectAtIndex:index];
+    item.textLabel.text = title;
 }
 
 @end

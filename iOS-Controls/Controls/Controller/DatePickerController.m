@@ -71,6 +71,8 @@
         self.mPickerView.frame = CGRectMake(size.width, 0, size.width, size.height);
         self.scrollView.contentSize = CGSizeMake(size.width * 2, size.height);
         [self.yPickerView selectRow:9 ofComponent:0 animated:YES];
+        [self.yPickerView reloadAllComponents];
+        [self.mPickerView reloadAllComponents];
     });
 }
 

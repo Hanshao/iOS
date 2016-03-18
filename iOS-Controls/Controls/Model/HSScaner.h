@@ -4,7 +4,7 @@
 //
 //  Created by Shaojun Han on 10/12/15.
 //  Copyright © 2015 HadLinks. All rights reserved.
-//
+//  0.1.1 稳定版
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>

@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		184FAAE91C521ABA00DC9920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184FAAE81C521ABA00DC9920 /* Assets.xcassets */; };
 		184FAAEC1C521ABA00DC9920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184FAAEA1C521ABA00DC9920 /* LaunchScreen.storyboard */; };
+		C93035301C9AA7BD00482D36 /* HSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C930352F1C9AA7BD00482D36 /* HSCircleView.m */; };
+		C93035341C9AACE800482D36 /* CircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93035321C9AACE800482D36 /* CircleViewController.m */; };
+		C93035351C9AACE800482D36 /* CircleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93035331C9AACE800482D36 /* CircleViewController.xib */; };
 		C94BCBBA1C72AB4C0092C0BD /* DatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBB51C72AB4C0092C0BD /* DatePickerController.m */; };
 		C94BCBBB1C72AB4C0092C0BD /* DatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBB61C72AB4C0092C0BD /* DatePickerController.xib */; };
 		C94BCBBC1C72AB4C0092C0BD /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBB81C72AB4C0092C0BD /* PieViewController.m */; };
 		C94BCBBD1C72AB4C0092C0BD /* PieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBB91C72AB4C0092C0BD /* PieViewController.xib */; };
 		C94BCBC41C72AFF70092C0BD /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBC21C72AFF70092C0BD /* SegmentViewController.m */; };
 		C94BCBC51C72AFF70092C0BD /* SegmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBC31C72AFF70092C0BD /* SegmentViewController.xib */; };
-		C94BCBC91C72B02B0092C0BD /* PolyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94BCBC71C72B02B0092C0BD /* PolyViewController.m */; };
-		C94BCBCA1C72B02B0092C0BD /* PolyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94BCBC81C72B02B0092C0BD /* PolyViewController.xib */; };
 		C96F1D101C7E8C2D008B19EC /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96F1D0E1C7E8C2D008B19EC /* AnalysisViewController.xib */; };
 		C96F1D131C7E8E10008B19EC /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F1D121C7E8E10008B19EC /* AnalysisViewController.m */; };
 		C96F222F1C869587008B19EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F222E1C869587008B19EC /* QuartzCore.framework */; };
 		C96F225C1C88268F008B19EC /* HSScaner.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F225B1C88268F008B19EC /* HSScaner.m */; };
 		C96F226A1C88269F008B19EC /* HSAnalysisView.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F225F1C88269F008B19EC /* HSAnalysisView.m */; };
 		C96F226B1C88269F008B19EC /* HSPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22611C88269F008B19EC /* HSPickerView.m */; };
-		C96F226C1C88269F008B19EC /* HSPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22631C88269F008B19EC /* HSPolyline.m */; };
 		C96F226D1C88269F008B19EC /* HSSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22651C88269F008B19EC /* HSSegmentView.m */; };
 		C96F226E1C88269F008B19EC /* PhotoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22671C88269F008B19EC /* PhotoLayer.m */; };
 		C96F226F1C88269F008B19EC /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22691C88269F008B19EC /* XYPieChart.m */; };
@@ -33,6 +33,15 @@
 		C96F227B1C8826F0008B19EC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F22771C8826F0008B19EC /* MainViewController.m */; };
 		C96F227E1C882794008B19EC /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F227D1C882794008B19EC /* ScanViewController.m */; };
 		C96F22801C8827A4008B19EC /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96F227F1C8827A4008B19EC /* ScanViewController.xib */; };
+		C98897F61C97DEF300871270 /* FlatButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98897F41C97DEF300871270 /* FlatButtonViewController.m */; };
+		C98897F71C97DEF300871270 /* FlatButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98897F51C97DEF300871270 /* FlatButtonViewController.xib */; };
+		C98898021C9A761E00871270 /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98898011C9A761E00871270 /* SlideViewController.m */; };
+		C98898051C9A762D00871270 /* SlideShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = C98898041C9A762D00871270 /* SlideShowView.m */; };
+		C988980A1C9A764500871270 /* healthy_life_pic1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98898071C9A764500871270 /* healthy_life_pic1.jpg */; };
+		C988980B1C9A764500871270 /* healthy_life_pic2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98898081C9A764500871270 /* healthy_life_pic2.jpg */; };
+		C988980C1C9A764500871270 /* healthy_life_pic3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98898091C9A764500871270 /* healthy_life_pic3.jpg */; };
+		C988980E1C9A767900871270 /* SlideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C988980D1C9A767900871270 /* SlideViewController.xib */; };
+		C9CDB1E81C93B27900C19A67 /* HSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CDB1E71C93B27900C19A67 /* HSFlatButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +49,11 @@
 		184FAAE81C521ABA00DC9920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		184FAAEB1C521ABA00DC9920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		184FAAED1C521ABA00DC9920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C930352E1C9AA7BD00482D36 /* HSCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSCircleView.h; sourceTree = "<group>"; };
+		C930352F1C9AA7BD00482D36 /* HSCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSCircleView.m; sourceTree = "<group>"; };
+		C93035311C9AACE800482D36 /* CircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleViewController.h; sourceTree = "<group>"; };
+		C93035321C9AACE800482D36 /* CircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleViewController.m; sourceTree = "<group>"; };
+		C93035331C9AACE800482D36 /* CircleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleViewController.xib; sourceTree = "<group>"; };
 		C94BCBB41C72AB4C0092C0BD /* DatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerController.h; sourceTree = "<group>"; };
 		C94BCBB51C72AB4C0092C0BD /* DatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerController.m; sourceTree = "<group>"; };
 		C94BCBB61C72AB4C0092C0BD /* DatePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerController.xib; sourceTree = "<group>"; };
@@ -49,9 +63,6 @@
 		C94BCBC11C72AFF70092C0BD /* SegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentViewController.h; sourceTree = "<group>"; };
 		C94BCBC21C72AFF70092C0BD /* SegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentViewController.m; sourceTree = "<group>"; };
 		C94BCBC31C72AFF70092C0BD /* SegmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentViewController.xib; sourceTree = "<group>"; };
-		C94BCBC61C72B02B0092C0BD /* PolyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolyViewController.h; sourceTree = "<group>"; };
-		C94BCBC71C72B02B0092C0BD /* PolyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolyViewController.m; sourceTree = "<group>"; };
-		C94BCBC81C72B02B0092C0BD /* PolyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PolyViewController.xib; sourceTree = "<group>"; };
 		C96F1D0E1C7E8C2D008B19EC /* AnalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
 		C96F1D111C7E8E10008B19EC /* AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisViewController.h; sourceTree = "<group>"; };
 		C96F1D121C7E8E10008B19EC /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisViewController.m; sourceTree = "<group>"; };
@@ -62,8 +73,6 @@
 		C96F225F1C88269F008B19EC /* HSAnalysisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAnalysisView.m; sourceTree = "<group>"; };
 		C96F22601C88269F008B19EC /* HSPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPickerView.h; sourceTree = "<group>"; };
 		C96F22611C88269F008B19EC /* HSPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPickerView.m; sourceTree = "<group>"; };
-		C96F22621C88269F008B19EC /* HSPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPolyline.h; sourceTree = "<group>"; };
-		C96F22631C88269F008B19EC /* HSPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPolyline.m; sourceTree = "<group>"; };
 		C96F22641C88269F008B19EC /* HSSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSegmentView.h; sourceTree = "<group>"; };
 		C96F22651C88269F008B19EC /* HSSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSegmentView.m; sourceTree = "<group>"; };
 		C96F22661C88269F008B19EC /* PhotoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoLayer.h; sourceTree = "<group>"; };
@@ -80,6 +89,19 @@
 		C96F227C1C882794008B19EC /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		C96F227D1C882794008B19EC /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		C96F227F1C8827A4008B19EC /* ScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanViewController.xib; sourceTree = "<group>"; };
+		C98897F31C97DEF300871270 /* FlatButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatButtonViewController.h; sourceTree = "<group>"; };
+		C98897F41C97DEF300871270 /* FlatButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlatButtonViewController.m; sourceTree = "<group>"; };
+		C98897F51C97DEF300871270 /* FlatButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlatButtonViewController.xib; sourceTree = "<group>"; };
+		C98898001C9A761E00871270 /* SlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideViewController.h; sourceTree = "<group>"; };
+		C98898011C9A761E00871270 /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideViewController.m; sourceTree = "<group>"; };
+		C98898031C9A762D00871270 /* SlideShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideShowView.h; sourceTree = "<group>"; };
+		C98898041C9A762D00871270 /* SlideShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideShowView.m; sourceTree = "<group>"; };
+		C98898071C9A764500871270 /* healthy_life_pic1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = healthy_life_pic1.jpg; sourceTree = "<group>"; };
+		C98898081C9A764500871270 /* healthy_life_pic2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = healthy_life_pic2.jpg; sourceTree = "<group>"; };
+		C98898091C9A764500871270 /* healthy_life_pic3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = healthy_life_pic3.jpg; sourceTree = "<group>"; };
+		C988980D1C9A767900871270 /* SlideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideViewController.xib; sourceTree = "<group>"; };
+		C9CDB1E61C93B27900C19A67 /* HSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSFlatButton.h; sourceTree = "<group>"; };
+		C9CDB1E71C93B27900C19A67 /* HSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSFlatButton.m; sourceTree = "<group>"; };
 		CD32A4E61ADE05ED7E97B0BA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,6 +141,7 @@
 				C94BCBB31C72AB4C0092C0BD /* Controller */,
 				C96F225D1C88269F008B19EC /* View */,
 				C96F22591C88268F008B19EC /* Model */,
+				C98898061C9A764500871270 /* Resource */,
 				184FAAE81C521ABA00DC9920 /* Assets.xcassets */,
 				C96F22751C8826F0008B19EC /* Main.Storyboard */,
 				184FAAEA1C521ABA00DC9920 /* LaunchScreen.storyboard */,
@@ -157,15 +180,21 @@
 				C94BCBC11C72AFF70092C0BD /* SegmentViewController.h */,
 				C94BCBC21C72AFF70092C0BD /* SegmentViewController.m */,
 				C94BCBC31C72AFF70092C0BD /* SegmentViewController.xib */,
-				C94BCBC61C72B02B0092C0BD /* PolyViewController.h */,
-				C94BCBC71C72B02B0092C0BD /* PolyViewController.m */,
-				C94BCBC81C72B02B0092C0BD /* PolyViewController.xib */,
 				C96F1D111C7E8E10008B19EC /* AnalysisViewController.h */,
 				C96F1D121C7E8E10008B19EC /* AnalysisViewController.m */,
 				C96F1D0E1C7E8C2D008B19EC /* AnalysisViewController.xib */,
 				C96F227C1C882794008B19EC /* ScanViewController.h */,
 				C96F227D1C882794008B19EC /* ScanViewController.m */,
 				C96F227F1C8827A4008B19EC /* ScanViewController.xib */,
+				C98898001C9A761E00871270 /* SlideViewController.h */,
+				C98898011C9A761E00871270 /* SlideViewController.m */,
+				C988980D1C9A767900871270 /* SlideViewController.xib */,
+				C98897F31C97DEF300871270 /* FlatButtonViewController.h */,
+				C98897F41C97DEF300871270 /* FlatButtonViewController.m */,
+				C98897F51C97DEF300871270 /* FlatButtonViewController.xib */,
+				C93035311C9AACE800482D36 /* CircleViewController.h */,
+				C93035321C9AACE800482D36 /* CircleViewController.m */,
+				C93035331C9AACE800482D36 /* CircleViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,12 +217,16 @@
 				C96F225F1C88269F008B19EC /* HSAnalysisView.m */,
 				C96F22601C88269F008B19EC /* HSPickerView.h */,
 				C96F22611C88269F008B19EC /* HSPickerView.m */,
-				C96F22621C88269F008B19EC /* HSPolyline.h */,
-				C96F22631C88269F008B19EC /* HSPolyline.m */,
 				C96F22681C88269F008B19EC /* XYPieChart.h */,
 				C96F22691C88269F008B19EC /* XYPieChart.m */,
 				C96F22661C88269F008B19EC /* PhotoLayer.h */,
 				C96F22671C88269F008B19EC /* PhotoLayer.m */,
+				C98898031C9A762D00871270 /* SlideShowView.h */,
+				C98898041C9A762D00871270 /* SlideShowView.m */,
+				C930352E1C9AA7BD00482D36 /* HSCircleView.h */,
+				C930352F1C9AA7BD00482D36 /* HSCircleView.m */,
+				C9CDB1E61C93B27900C19A67 /* HSFlatButton.h */,
+				C9CDB1E71C93B27900C19A67 /* HSFlatButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +241,16 @@
 				C96F22771C8826F0008B19EC /* MainViewController.m */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		C98898061C9A764500871270 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C98898071C9A764500871270 /* healthy_life_pic1.jpg */,
+				C98898081C9A764500871270 /* healthy_life_pic2.jpg */,
+				C98898091C9A764500871270 /* healthy_life_pic3.jpg */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,14 +310,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C988980A1C9A764500871270 /* healthy_life_pic1.jpg in Resources */,
 				C96F22801C8827A4008B19EC /* ScanViewController.xib in Resources */,
 				C94BCBC51C72AFF70092C0BD /* SegmentViewController.xib in Resources */,
+				C988980E1C9A767900871270 /* SlideViewController.xib in Resources */,
 				184FAAEC1C521ABA00DC9920 /* LaunchScreen.storyboard in Resources */,
-				C94BCBCA1C72B02B0092C0BD /* PolyViewController.xib in Resources */,
 				C96F227A1C8826F0008B19EC /* Main.Storyboard in Resources */,
+				C988980B1C9A764500871270 /* healthy_life_pic2.jpg in Resources */,
 				C94BCBBB1C72AB4C0092C0BD /* DatePickerController.xib in Resources */,
 				C94BCBBD1C72AB4C0092C0BD /* PieViewController.xib in Resources */,
+				C988980C1C9A764500871270 /* healthy_life_pic3.jpg in Resources */,
 				184FAAE91C521ABA00DC9920 /* Assets.xcassets in Resources */,
+				C98897F71C97DEF300871270 /* FlatButtonViewController.xib in Resources */,
+				C93035351C9AACE800482D36 /* CircleViewController.xib in Resources */,
 				C96F1D101C7E8C2D008B19EC /* AnalysisViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,12 +334,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98898021C9A761E00871270 /* SlideViewController.m in Sources */,
 				C94BCBBA1C72AB4C0092C0BD /* DatePickerController.m in Sources */,
 				C96F1D131C7E8E10008B19EC /* AnalysisViewController.m in Sources */,
 				C96F226E1C88269F008B19EC /* PhotoLayer.m in Sources */,
+				C93035341C9AACE800482D36 /* CircleViewController.m in Sources */,
+				C98897F61C97DEF300871270 /* FlatButtonViewController.m in Sources */,
+				C93035301C9AA7BD00482D36 /* HSCircleView.m in Sources */,
 				C96F227E1C882794008B19EC /* ScanViewController.m in Sources */,
+				C98898051C9A762D00871270 /* SlideShowView.m in Sources */,
 				C96F226F1C88269F008B19EC /* XYPieChart.m in Sources */,
-				C96F226C1C88269F008B19EC /* HSPolyline.m in Sources */,
 				C96F225C1C88268F008B19EC /* HSScaner.m in Sources */,
 				C94BCBBC1C72AB4C0092C0BD /* PieViewController.m in Sources */,
 				C96F22781C8826F0008B19EC /* AppDelegate.m in Sources */,
@@ -301,7 +353,7 @@
 				C94BCBC41C72AFF70092C0BD /* SegmentViewController.m in Sources */,
 				C96F22791C8826F0008B19EC /* main.m in Sources */,
 				C96F227B1C8826F0008B19EC /* MainViewController.m in Sources */,
-				C94BCBC91C72B02B0092C0BD /* PolyViewController.m in Sources */,
+				C9CDB1E81C93B27900C19A67 /* HSFlatButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
