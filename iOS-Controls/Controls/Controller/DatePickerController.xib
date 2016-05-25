@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3O0-VB-llV">
-                    <rect key="frame" x="14" y="144" width="292" height="280"/>
+                    <rect key="frame" x="14" y="122" width="292" height="324"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPD-iL-q8N">
-                            <rect key="frame" x="0.0" y="225" width="292" height="55"/>
+                            <rect key="frame" x="0.0" y="269" width="292" height="55"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-eP-Mc5">
                                     <rect key="frame" x="0.0" y="0.0" width="146" height="55"/>
@@ -68,9 +68,6 @@
                                 <constraint firstAttribute="height" constant="0.5" id="onj-Uc-sP4"/>
                             </constraints>
                         </imageView>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Th5-AQ-o3V">
-                            <rect key="frame" x="0.0" y="74.5" width="292" height="150.5"/>
-                        </scrollView>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNi-fJ-SjG">
                             <rect key="frame" x="0.0" y="45" width="292" height="30"/>
                             <subviews>
@@ -153,10 +150,13 @@
                                 </mask>
                             </variation>
                         </view>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Th5-AQ-o3V">
+                            <rect key="frame" x="0.0" y="74" width="292" height="194.5"/>
+                        </scrollView>
                     </subviews>
                     <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="280" id="12x-wU-RG9"/>
+                        <constraint firstAttribute="height" constant="324" id="12x-wU-RG9"/>
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="2lp-4b-WFm"/>
                         <constraint firstItem="Th5-AQ-o3V" firstAttribute="top" secondItem="Gka-ZP-6qa" secondAttribute="bottom" id="6Tg-EE-XVU"/>
                         <constraint firstItem="eIH-bM-FXt" firstAttribute="leading" secondItem="3O0-VB-llV" secondAttribute="leading" id="7Gc-lX-ho0"/>

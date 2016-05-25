@@ -14,15 +14,15 @@
 		C950219A1C8D5787007C44F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95021991C8D5787007C44F4 /* Assets.xcassets */; };
 		C950219D1C8D5787007C44F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C950219B1C8D5787007C44F4 /* LaunchScreen.storyboard */; };
 		C95021E91C8D5CD1007C44F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C95021E61C8D5CD1007C44F4 /* AppDelegate.m */; };
-		C95021EE1C8D5CFF007C44F4 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C95021ED1C8D5CFF007C44F4 /* NSDate+Extension.m */; };
+		C95021EE1C8D5CFF007C44F4 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C95021ED1C8D5CFF007C44F4 /* NSDate+Helper.m */; };
 		C95021F31C8D629A007C44F4 /* DateExtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95021F11C8D629A007C44F4 /* DateExtViewController.m */; };
 		C95021F41C8D629A007C44F4 /* DateExtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95021F21C8D629A007C44F4 /* DateExtViewController.xib */; };
 		C95022431C8D6D3D007C44F4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95022421C8D6D3D007C44F4 /* MainViewController.m */; };
-		C95022461C8D6F31007C44F4 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C95022451C8D6F31007C44F4 /* NSString+Extension.m */; };
-		C95022491C8D6F68007C44F4 /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C95022481C8D6F68007C44F4 /* NSObject+Extension.m */; };
-		C950224C1C8D7906007C44F4 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C950224B1C8D7906007C44F4 /* UIImage+Extension.m */; };
-		C95022501C8D79DA007C44F4 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C950224F1C8D79DA007C44F4 /* UIView+Extension.m */; };
-		C95022531C8D7A42007C44F4 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C95022521C8D7A42007C44F4 /* UIColor+Extension.m */; };
+		C95022461C8D6F31007C44F4 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C95022451C8D6F31007C44F4 /* NSString+Helper.m */; };
+		C95022491C8D6F68007C44F4 /* NSObject+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C95022481C8D6F68007C44F4 /* NSObject+Helper.m */; };
+		C950224C1C8D7906007C44F4 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C950224B1C8D7906007C44F4 /* UIImage+Helper.m */; };
+		C95022501C8D79DA007C44F4 /* UIView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C950224F1C8D79DA007C44F4 /* UIView+Helper.m */; };
+		C95022531C8D7A42007C44F4 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C95022521C8D7A42007C44F4 /* UIColor+Helper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,23 +37,23 @@
 		C950219E1C8D5787007C44F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C95021E51C8D5CD1007C44F4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C95021E61C8D5CD1007C44F4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C95021EC1C8D5CFF007C44F4 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
-		C95021ED1C8D5CFF007C44F4 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		C95021EC1C8D5CFF007C44F4 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		C95021ED1C8D5CFF007C44F4 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
 		C95021F01C8D629A007C44F4 /* DateExtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateExtViewController.h; sourceTree = "<group>"; };
 		C95021F11C8D629A007C44F4 /* DateExtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateExtViewController.m; sourceTree = "<group>"; };
 		C95021F21C8D629A007C44F4 /* DateExtViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateExtViewController.xib; sourceTree = "<group>"; };
 		C95022411C8D6D3D007C44F4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		C95022421C8D6D3D007C44F4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		C95022441C8D6F31007C44F4 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
-		C95022451C8D6F31007C44F4 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
-		C95022471C8D6F68007C44F4 /* NSObject+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
-		C95022481C8D6F68007C44F4 /* NSObject+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
-		C950224A1C8D7906007C44F4 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
-		C950224B1C8D7906007C44F4 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
-		C950224E1C8D79DA007C44F4 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		C950224F1C8D79DA007C44F4 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		C95022511C8D7A42007C44F4 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
-		C95022521C8D7A42007C44F4 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		C95022441C8D6F31007C44F4 /* NSString+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Helper.h"; sourceTree = "<group>"; };
+		C95022451C8D6F31007C44F4 /* NSString+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Helper.m"; sourceTree = "<group>"; };
+		C95022471C8D6F68007C44F4 /* NSObject+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Helper.h"; sourceTree = "<group>"; };
+		C95022481C8D6F68007C44F4 /* NSObject+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Helper.m"; sourceTree = "<group>"; };
+		C950224A1C8D7906007C44F4 /* UIImage+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Helper.h"; sourceTree = "<group>"; };
+		C950224B1C8D7906007C44F4 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
+		C950224E1C8D79DA007C44F4 /* UIView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Helper.h"; sourceTree = "<group>"; };
+		C950224F1C8D79DA007C44F4 /* UIView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Helper.m"; sourceTree = "<group>"; };
+		C95022511C8D7A42007C44F4 /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
+		C95022521C8D7A42007C44F4 /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,16 +121,16 @@
 		C95021EB1C8D5CFF007C44F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C95021EC1C8D5CFF007C44F4 /* NSDate+Extension.h */,
-				C95021ED1C8D5CFF007C44F4 /* NSDate+Extension.m */,
-				C95022441C8D6F31007C44F4 /* NSString+Extension.h */,
-				C95022451C8D6F31007C44F4 /* NSString+Extension.m */,
-				C95022471C8D6F68007C44F4 /* NSObject+Extension.h */,
-				C95022481C8D6F68007C44F4 /* NSObject+Extension.m */,
-				C950224A1C8D7906007C44F4 /* UIImage+Extension.h */,
-				C950224B1C8D7906007C44F4 /* UIImage+Extension.m */,
-				C95022511C8D7A42007C44F4 /* UIColor+Extension.h */,
-				C95022521C8D7A42007C44F4 /* UIColor+Extension.m */,
+				C95021EC1C8D5CFF007C44F4 /* NSDate+Helper.h */,
+				C95021ED1C8D5CFF007C44F4 /* NSDate+Helper.m */,
+				C95022441C8D6F31007C44F4 /* NSString+Helper.h */,
+				C95022451C8D6F31007C44F4 /* NSString+Helper.m */,
+				C95022471C8D6F68007C44F4 /* NSObject+Helper.h */,
+				C95022481C8D6F68007C44F4 /* NSObject+Helper.m */,
+				C950224A1C8D7906007C44F4 /* UIImage+Helper.h */,
+				C950224B1C8D7906007C44F4 /* UIImage+Helper.m */,
+				C95022511C8D7A42007C44F4 /* UIColor+Helper.h */,
+				C95022521C8D7A42007C44F4 /* UIColor+Helper.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,8 +151,8 @@
 		C950224D1C8D79C7007C44F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C950224E1C8D79DA007C44F4 /* UIView+Extension.h */,
-				C950224F1C8D79DA007C44F4 /* UIView+Extension.m */,
+				C950224E1C8D79DA007C44F4 /* UIView+Helper.h */,
+				C950224F1C8D79DA007C44F4 /* UIView+Helper.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +188,7 @@
 				TargetAttributes = {
 					C95021891C8D5787007C44F4 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 4KG6HP5AK5;
 					};
 				};
 			};
@@ -229,16 +230,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C95022501C8D79DA007C44F4 /* UIView+Extension.m in Sources */,
-				C95021EE1C8D5CFF007C44F4 /* NSDate+Extension.m in Sources */,
-				C95022461C8D6F31007C44F4 /* NSString+Extension.m in Sources */,
+				C95022501C8D79DA007C44F4 /* UIView+Helper.m in Sources */,
+				C95021EE1C8D5CFF007C44F4 /* NSDate+Helper.m in Sources */,
+				C95022461C8D6F31007C44F4 /* NSString+Helper.m in Sources */,
 				C95022431C8D6D3D007C44F4 /* MainViewController.m in Sources */,
 				C95021E91C8D5CD1007C44F4 /* AppDelegate.m in Sources */,
 				C95021F31C8D629A007C44F4 /* DateExtViewController.m in Sources */,
-				C95022491C8D6F68007C44F4 /* NSObject+Extension.m in Sources */,
-				C95022531C8D7A42007C44F4 /* UIColor+Extension.m in Sources */,
+				C95022491C8D6F68007C44F4 /* NSObject+Helper.m in Sources */,
+				C95022531C8D7A42007C44F4 /* UIColor+Helper.m in Sources */,
 				C950218F1C8D5787007C44F4 /* main.m in Sources */,
-				C950224C1C8D7906007C44F4 /* UIImage+Extension.m in Sources */,
+				C950224C1C8D7906007C44F4 /* UIImage+Helper.m in Sources */,
 				C930352C1C9A96BC00482D36 /* ColorExtViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,11 +351,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Helper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bugull.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanshao.352AirCleaner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -363,11 +367,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Helper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bugull.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanshao.352AirCleaner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

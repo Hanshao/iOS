@@ -44,14 +44,16 @@ static CGFloat ACTIVE_DISTANCE = 200.0;
         UICollectionViewLayoutAttributes *copyOfAttribute = [attribute copy];
         [result addObject:copyOfAttribute];
         if (!CGRectIntersectsRect(copyOfAttribute.frame, rect)) continue;
+        
         // 距离显示中心的距离
         CGFloat distance = CGRectGetMidY(rectOfVisible) - copyOfAttribute.center.y;
-        if (!(ABS(distance) < ACTIVE_DISTANCE)) continue;
+        if (ABS(distance) > ACTIVE_DISTANCE) continue;
+        
         // 归一化的距离
-        CGFloat distanceOfNormal = distance / ACTIVE_DISTANCE;
-        CGFloat zoom = 1 - ABS(distanceOfNormal);
+        CGFloat scale = (ACTIVE_DISTANCE - ABS(distance)) / ACTIVE_DISTANCE;
+        
         // 设置属性
-        copyOfAttribute.transform = CGAffineTransformMakeScale(zoom, zoom);
+        copyOfAttribute.transform = CGAffineTransformMakeScale(scale, scale);
         copyOfAttribute.zIndex = 1;
     }
     
@@ -59,26 +61,30 @@ static CGFloat ACTIVE_DISTANCE = 200.0;
 }
 // target point
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)propose {
+    CGSize size = self.collectionView.bounds.size;
     // proposedContentOffset是没有对齐到网格时本来应该停下的位置
-    CGRect targetRectangle = CGRectMake(0.0, propose.y,
-                                        self.collectionView.bounds.size.width, self.collectionView.bounds.size.height);
+    CGRect targetRectangle = CGRectMake(0.0, propose.y, size.width, size.height);
     NSArray *array = [super layoutAttributesForElementsInRect:targetRectangle];
     
     CGFloat offsetAdjustment = MAXFLOAT;
-    //理论上应cell停下来的中心点
-    CGFloat ycenter = propose.y + (CGRectGetHeight(self.collectionView.bounds)/2.0);
+    // 理论上应cell停下来的中心点
+    CGFloat ycenter = propose.y + size.height/2.0;
     
-    //对当前屏幕中的UICollectionViewLayoutAttributes逐个与屏幕中心进行比较，找出最接近中心的一个
+    // 对当前屏幕中的UICollectionViewLayoutAttributes逐个与屏幕中心进行比较，找出最接近中心的一个
     for (UICollectionViewLayoutAttributes* layoutAttributes in array) {
         CGFloat icenter = layoutAttributes.center.y;
+        NSLog(@"icenter = %.2f, height = %.2f", icenter, layoutAttributes.size.height);
         if (ABS(icenter - ycenter) < ABS(offsetAdjustment)) {
             offsetAdjustment = icenter - ycenter;
         }
     }
+    NSLog(@"height = %.2f, ycenter = %.2f, propose.y = %.2f, offset = %.2f", size.height, ycenter, propose.y, offsetAdjustment);
+    NSLog(@"target contentOffset = %@", NSStringFromCGPoint(CGPointMake(propose.x,  MAX(0, propose.y + offsetAdjustment))));
     return CGPointMake(propose.x, MAX(0, propose.y + offsetAdjustment));
 }
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)propose withScrollingVelocity:(CGPoint)velocity {
+    NSLog(@"%s", __FUNCTION__);
     return [self targetContentOffsetForProposedContentOffset:propose];
 }
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
@@ -108,7 +114,7 @@ static CGFloat ACTIVE_DISTANCE = 200.0;
 @end
 
 // 重用ID，和UICollectionViewCell上的子视图label的tag值
-static NSString *CellReuseID = @"ReuseID";
+static NSString *CellReuseIdentifier = @"ReuseID";
 static NSInteger CellSubViewIndicator = 1200;
 
 @implementation HSPickerView
@@ -145,6 +151,10 @@ static NSInteger CellSubViewIndicator = 1200;
     if (!(component >= 0 && component < self.pickerArray.count)) return;
     if (row < 0 || row >= [self numberOfRowsOfComponent:component]) return;
     
+    if (nil == self || self.hidden || nil == self.superview) animated = NO;
+    if (CGSizeEqualToSize(self.bounds.size, CGSizeZero)) animated = NO;
+    
+    [self.rowArray replaceObjectAtIndex:component withObject:@(row)];
     HSPickerScrollView *scrollView = [self.pickerArray objectAtIndex:component];
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:row inSection:0];
     [scrollView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally animated:animated];
@@ -201,10 +211,8 @@ static NSInteger CellSubViewIndicator = 1200;
     CGSize size = self.bounds.size;
     CGFloat unit = size.width / numberOfComponents, total = 0;
     for (int i = (int)self.pickerArray.count; i < numberOfComponents; ++ i, total += unit) {
-        HSPickerScrollLayout *layout = [[HSPickerScrollLayout alloc] init]; layout.minimumLineSpacing = 20;
-        CGRect rectangle = CGRectMake(total, 0, unit, size.height);
-        layout.sectionInset = UIEdgeInsetsMake(10, 0, 10, 0);
-        HSPickerScrollView *pickerScrollView = [[HSPickerScrollView alloc] initWithFrame:rectangle collectionViewLayout:layout];
+        HSPickerScrollLayout *layout = [[HSPickerScrollLayout alloc] init]; layout.minimumLineSpacing = 20.0;
+        HSPickerScrollView *pickerScrollView = [[HSPickerScrollView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         
         pickerScrollView.showsHorizontalScrollIndicator = NO;
         pickerScrollView.showsVerticalScrollIndicator = NO;
@@ -214,7 +222,7 @@ static NSInteger CellSubViewIndicator = 1200;
             pickerScrollView.backgroundColor = self.itemColor;
         }
         
-        [pickerScrollView registerClass:UICollectionViewCell.class forCellWithReuseIdentifier:CellReuseID];
+        [pickerScrollView registerClass:UICollectionViewCell.class forCellWithReuseIdentifier:CellReuseIdentifier];
         pickerScrollView.dataSource = self;
         pickerScrollView.delegate = self;
         
@@ -223,17 +231,14 @@ static NSInteger CellSubViewIndicator = 1200;
         [self.rowArray addObject:@(0)];
         
         // 添加layer层
-        CGFloat height = unit - 16 > size.height/2.0 ? size.height/2.0 : unit - 16;
         CAShapeLayer *layer = [CAShapeLayer layer];
-        layer.frame = CGRectMake(total + (unit - height)/2, (size.height - height)/2, height, height);
-        layer.cornerRadius = height / 2.0;
-        layer.masksToBounds = YES;
-        layer.borderWidth = 1.2;
+        layer.masksToBounds = YES; layer.borderWidth = 1.2;
         if ([self.delegate respondsToSelector:@selector(pickerView:colorOfComponent:)]) {
             layer.borderColor = [self.delegate pickerView:self colorOfComponent:i].CGColor;
         } else {    // 默认颜色
             layer.borderColor = self.circleColor.CGColor;
         }
+        
         [self.layer addSublayer:layer];
         [self.layerArray addObject:layer];
     }
@@ -247,6 +252,7 @@ static NSInteger CellSubViewIndicator = 1200;
     if (numberOfComponents < 1) return;
     
     CGSize size = self.bounds.size;
+    NSLog(@"layout height = %.2f", size.height);
     CGFloat unit = size.width / numberOfComponents, total = 0;
     for (int i = 0; i < numberOfComponents; ++ i, total += unit) {
         
@@ -254,18 +260,35 @@ static NSInteger CellSubViewIndicator = 1200;
         pickerScrollView.frame = CGRectMake(total, 0, unit, size.height);
         
         // contentInset
-        HSPickerScrollLayout *layout = (HSPickerScrollLayout *)pickerScrollView.collectionViewLayout;
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        HSPickerScrollLayout *layout = (HSPickerScrollLayout *)pickerScrollView.collectionViewLayout;
+        
         CGFloat itemHeight = [self collectionView:pickerScrollView layout:layout sizeForItemAtIndexPath:indexPath].height;
         CGFloat distance = (size.height - itemHeight) / 2.0;
-        layout.sectionInset = UIEdgeInsetsMake(distance, 0.0, distance, 0.0);
+        layout.sectionInset = UIEdgeInsetsMake(0.25 + distance, 0.0, 0.25 + distance, 0.0);
+        
+        NSLog(@"layout item height = %.2f", itemHeight);
+        NSLog(@"layout distance = %.2f", distance);
         
         // circle layer
+        [CATransaction begin];
+        [CATransaction setDisableActions:YES];
         CAShapeLayer *layer = [self.layerArray objectAtIndex:i];
         CGFloat height = unit - 16 > size.height/2.0 ? size.height/2.0 : unit - 16;
         layer.frame = CGRectMake(total + (unit - height)/2, (size.height - height)/2, height, height);
         layer.cornerRadius = height / 2.0;
+        [CATransaction commit];
      }
+    
+    for (int i = 0; i < self.pickerArray.count; ++ i) {
+        HSPickerScrollView *scrollView = [self.pickerArray objectAtIndex:i];
+        [scrollView reloadData];
+    }
+    
+    for (int i = 0; i < self.rowArray.count; ++ i) {
+        NSInteger row = [[self.rowArray objectAtIndex:i] integerValue];
+        [self selectRow:row ofComponent:i animated:YES];
+    }
 }
 
 /**
@@ -273,38 +296,36 @@ static NSInteger CellSubViewIndicator = 1200;
  */
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    NSInteger component = [self.pickerArray indexOfObject:collectionView];
-    if (!(0 <= component && component < self.pickerArray.count)) return 0;
     NSInteger number = 0;
+    NSInteger component = [self.pickerArray indexOfObject:collectionView];
+    if (component < 0 || component >= self.pickerArray.count) return number;
+    
     if([self.delegate respondsToSelector:@selector(pickerView:numberOfRowsOfComponent:)]) {
         number = [self.delegate pickerView:self numberOfRowsOfComponent:component];
     }
+    
     if (number > 0 && number <= [[self.rowArray objectAtIndex:component] integerValue]) {
         [self.rowArray replaceObjectAtIndex:component withObject:@(number - 1)];
         [self selectRow:(number - 1) ofComponent:component animated:NO];
-        HSPickerScrollView *scrollView = [self.pickerArray objectAtIndex:component];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:number - 1 inSection:0];
-        [scrollView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally animated:NO];
-        HSPickerScrollLayout *layout = (HSPickerScrollLayout *)scrollView.collectionViewLayout;
-        [layout invalidateLayout];
-
     }
     return number;
 }
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellReuseID forIndexPath:indexPath];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellReuseIdentifier forIndexPath:indexPath];
     
     NSInteger component = [self.pickerArray indexOfObject:collectionView], row = indexPath.row;
-    if (!(0 <= component && component < self.pickerArray.count)) return cell;
+    if (component < 0 || component >= self.pickerArray.count) return cell;
     
     if(![cell viewWithTag:CellSubViewIndicator]) {
         UILabel *label = [[UILabel alloc] initWithFrame:cell.bounds];
         label.textAlignment = NSTextAlignmentCenter; label.font = [UIFont systemFontOfSize:24.0];
         [cell.contentView addSubview:label]; label.tag = CellSubViewIndicator;
     }
+    // 测试
+    cell.backgroundColor = [UIColor orangeColor];
     
     UILabel *label = [cell viewWithTag:CellSubViewIndicator];
-    [label setFrame:cell.bounds];
+    label.text = nil; [label setFrame:cell.bounds];
     if ([self.delegate respondsToSelector:@selector(pickerView:attributedTitleOfRow:ofComponent:)]) {
         [label setAttributedText:[self.delegate pickerView:self attributedTitleOfRow:row ofComponent:component]];
     } else if ([self.delegate respondsToSelector:@selector(pickerView:titleOfRow:ofComponent:)]) {
@@ -324,18 +345,16 @@ static NSInteger CellSubViewIndicator = 1200;
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat rowHeight = self.rowHeight;
+    CGFloat weight = collectionView.bounds.size.width;
     NSInteger component = [self.pickerArray indexOfObject:collectionView];
-    if (0 <= component && component < self.pickerArray.count && [self.delegate
-                                                             respondsToSelector:@selector(pickerView:rowHeightOfComponent:)]) {
+    
+    if (component < 0 || component >= self.pickerArray.count)
+        return CGSizeMake(weight, rowHeight);
+    
+    if ([self.delegate respondsToSelector:@selector(pickerView:rowHeightOfComponent:)]) {
         rowHeight = [self.delegate pickerView:self rowHeightOfComponent:component];
     }
     return CGSizeMake(collectionView.bounds.size.width , rowHeight);
-}
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:section];
-    CGSize size = [self collectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
-    CGFloat distance = (collectionView.bounds.size.height - size.height) / 2.0;
-    return UIEdgeInsetsMake(distance, 0.0, distance, 0.0) ;
 }
 
 /**
@@ -345,15 +364,16 @@ static NSInteger CellSubViewIndicator = 1200;
     
     UICollectionView *collectionView = (UICollectionView *)scrollView;
     NSInteger component = [self.pickerArray indexOfObject:collectionView];
-    if (!(0 <= component && component < self.pickerArray.count)) return;
+    if (component < 0 || component >= self.pickerArray.count) return;
     
     CGSize size = collectionView.bounds.size;
-    CGPoint center = CGPointMake(size.width/2.0, collectionView.contentOffset.y + size.height/2);
+    CGPoint offset = collectionView.contentOffset;
+    CGPoint center = CGPointMake(size.width/2.0, offset.y + size.height/2);
     NSIndexPath *indexPath = [collectionView indexPathForItemAtPoint:center];
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     
-    NSInteger old_row = [[self.rowArray objectAtIndex:component] integerValue];
-    [self clearWithColloectionView:collectionView row:old_row component:component];
+    NSInteger row = [[self.rowArray objectAtIndex:component] integerValue];
+    [self clearWithColloectionView:collectionView row:row component:component];
     [self.rowArray replaceObjectAtIndex:component withObject:@(indexPath.row)];
     
     if ([cell viewWithTag:CellSubViewIndicator]) {
@@ -385,6 +405,4 @@ static NSInteger CellSubViewIndicator = 1200;
         label.textColor = self.normalTitleColor;
     }
 }
-
-
 @end

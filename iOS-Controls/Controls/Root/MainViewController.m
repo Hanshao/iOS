@@ -28,6 +28,31 @@
     [super viewDidLoad];
     self.actionArray = [NSMutableArray array];
     [self.actionArray addObject:@[@"enterPiePage", @"enterDatePickerPage", @"enterSegmentPage", @"enterAnalysisPage", @"enterQRScanPage", @"enterFlatButtonPage", @"enterSlidePage", @"enterCirclePage"]];
+    
+    UINavigationBar *navigationBar = self.navigationController.navigationBar;
+    UIImageView *lineImageView = [self findNavigationHairImageView:navigationBar];
+    lineImageView.hidden = YES;
+}
+- (UIImageView *)findNavigationHairImageView:(UIView *)parentView {
+    for (UIView *imageView in parentView.subviews) {
+        if ([imageView isKindOfClass:UIImageView.class] && imageView.bounds.size.height <= 1.0)
+            return (UIImageView *)imageView;
+        
+        UIImageView *hairImageView = [self findNavigationHairImageView:imageView];
+        if (hairImageView) return hairImageView;
+    }
+    return nil;
+}
+- (void)clearNavigationBar {
+    // we only transparent navigation bar and hide the seperator line, but customize the seperator line.
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+    self.navigationController.navigationBar.translucent = YES;
+    for (UIView *subview in self.navigationController.navigationBar.subviews) {
+        if ([subview isKindOfClass:UIImageView.class]) {
+            subview.hidden = YES; break;
+        }
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,6 +83,18 @@
     [self.navigationController pushViewController:[SlideViewController new] animated:YES];
 }
 - (void)enterCirclePage {
-    [self.navigationController pushViewController:[CircleViewController new] animated:YES];
+    [self presentWithViewController:[CircleViewController new]];
+}
+- (void)presentWithViewController:(UIViewController *)controller {
+    UIViewController *rootViewCtrl = [UIApplication sharedApplication].keyWindow.rootViewController;
+    if (nil == rootViewCtrl) rootViewCtrl = self;
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        controller.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        rootViewCtrl.modalPresentationStyle = UIModalPresentationPopover;
+    } else {
+        rootViewCtrl.modalPresentationStyle = UIModalPresentationCurrentContext;
+    }
+    [rootViewCtrl presentViewController:controller animated:YES completion:nil];
 }
 @end

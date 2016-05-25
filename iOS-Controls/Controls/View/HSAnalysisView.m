@@ -94,7 +94,7 @@
     self.dotline.frame = CGRectMake(0, 0, size.width, size.height);
     [self layoutDotline];
     
-    [self reloadData];
+    [self reloadGraphics];
 }
 - (void)initialize {
     
@@ -346,7 +346,7 @@
 #pragma mark
 #pragma mark Reload data
 // refresh
-- (void)reloadData {
+- (void)reloadGraphics {
     // data for drawing
     self.yGraphicNumber = 0;
     if ([self.dataSource respondsToSelector:@selector(numberOfYGraphiclinesInAnalysisView:)])
@@ -510,7 +510,7 @@
     
     NSArray *layers = [self.yGraphicAxis.layer sublayers];
     for (int i = (int)layers.count - 1; i >= yAxisNumber; -- i)
-        [[layers objectAtIndex:i] removeFromSuperview];
+        [[layers objectAtIndex:i] removeFromSuperlayer];
     
     layers = [self.yGraphicAxis.layer sublayers];
     for (int i = (int)layers.count; i < yAxisNumber; ++ i) {
@@ -532,7 +532,7 @@
     CGFloat iHeight = 0.0, unitHeight = yGraphicHeight;
     for (int i = 0; i < yAxisNumber; ++ i, iHeight += unitHeight) {
         CATextLayer *titlelayer = [layers objectAtIndex:i];
-        titlelayer.frame = CGRectMake(15, iHeight + (unitHeight - 12)/2.0, 200, 12);
+        titlelayer.frame = CGRectMake(15, iHeight + (unitHeight - 16)/2.0, 200, 16);
         titlelayer.foregroundColor = yGraphicAxisColor.CGColor;
         
         titlelayer.string = nil;

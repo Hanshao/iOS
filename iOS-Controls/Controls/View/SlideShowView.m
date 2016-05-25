@@ -106,27 +106,34 @@ static NSString *SlideShowCellReuseIdentifier = @"SlideShowCellReuseIdentifier";
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SlideShowCellReuseIdentifier forIndexPath:indexPath];
-    UIImageView *imageView = (UIImageView *)[cell viewWithTag:HSSlideShowImageViewTarget];
-    if (!imageView) [self cellInitialize:cell];
+    UIImageView *reuseImageView = (UIImageView *)[cell viewWithTag:HSSlideShowImageViewTarget];
+    if (!reuseImageView) [self cellInitialize:cell];
     // 数据
-    imageView = (UIImageView *)[cell viewWithTag:HSSlideShowImageViewTarget];
-    imageView.contentMode = self.displayMode;
-    if ([self.delegate respondsToSelector:@selector(slideShowView:imageOfSlide:)]) {
-        NSInteger index = indexPath.row >= self.numberOfPages ? 0 : indexPath.row;
+    reuseImageView = (UIImageView *)[cell viewWithTag:HSSlideShowImageViewTarget];
+    reuseImageView.contentMode = self.cotentDisplayMode;
+
+    NSInteger index = indexPath.row >= self.numberOfPages ? 0 : indexPath.row;
+    if ([self.delegate respondsToSelector:@selector(slideShowView:imageViewOfSlide:reuseImageView:)]) {
+        UIImageView *imageView = [self.delegate slideShowView:self imageViewOfSlide:index reuseImageView:reuseImageView];
+        imageView.contentMode = self.cotentDisplayMode;
+        
+        if (reuseImageView == imageView) return cell;
+        
+        [reuseImageView removeFromSuperview];
+        [self cellInitialize:cell imageView:imageView];
+    } else if ([self.delegate respondsToSelector:@selector(slideShowView:imageOfSlide:)]) {
         UIImage *image = [self.delegate slideShowView:self imageOfSlide:index];
-        imageView.image = image;
+        reuseImageView.image = image;
     }
     return cell;
 }
 // 选中时，通知代理
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
-    if ([self.delegate respondsToSelector:@selector(slideShowView:didSelectSlide:)])
-        [self.delegate slideShowView:self didSelectSlide:indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(slideShowView:didSelectedSlide:)])
+        [self.delegate slideShowView:self didSelectedSlide:indexPath.row];
 }
-- (void)cellInitialize:(UICollectionViewCell *)cell {
-    // cell中添加ImageView
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+- (void)cellInitialize:(UICollectionViewCell *)cell imageView:(UIImageView *)imageView {
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
     imageView.tag = HSSlideShowImageViewTarget;
     imageView.userInteractionEnabled = YES;
@@ -141,8 +148,13 @@ static NSString *SlideShowCellReuseIdentifier = @"SlideShowCellReuseIdentifier";
     [cell.contentView addConstraint:centerXLayout];
     [cell.contentView addConstraint:centerYLayout];
 }
+- (void)cellInitialize:(UICollectionViewCell *)cell {
+    // cell中添加ImageView
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [self cellInitialize:cell imageView:imageView];
+}
 // 数据加载
-- (void)reloadData {
+- (void)reloadAllSlides {
     [self pauseByInternal];
     [self.collectionView reloadData];
     [self fireByInternal];
@@ -253,10 +265,10 @@ static NSString *SlideShowCellReuseIdentifier = @"SlideShowCellReuseIdentifier";
  * 显示相关
  */
 // 显示模式设置
-- (void)setDisplayMode:(UIViewContentMode)displayMode {
-    if (_displayMode == displayMode) return;
-    _displayMode = displayMode;
-    [self reloadData];      // 会关闭计时器，在重新加载数据，之后重新启动计时器
+- (void)setContentDisplayMode:(UIViewContentMode)displayMode {
+    if (_cotentDisplayMode == displayMode) return;
+    _cotentDisplayMode = displayMode;
+    [self reloadAllSlides];      // 会关闭计时器，在重新加载数据，之后重新启动计时器
 }
 - (void)setShouldHiddenPageIndicator:(BOOL)shouldHiddenPageIndicator {
     if (_shouldHiddenPageIndicator == shouldHiddenPageIndicator) return;

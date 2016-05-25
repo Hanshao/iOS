@@ -10,7 +10,8 @@
 
 typedef NS_ENUM(NSInteger, CircleAnimationType) {
     CircleAnimationSplitType = 1,
-    CircleAnimationRotateType = 2
+    CircleAnimationRotateType = 2,
+    CircleAnimationUnfoldType = 3
 };
 
 @interface HSCircleView : UIView

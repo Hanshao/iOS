@@ -20,23 +20,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.actionArray = @[@"enterDateExtPage", @"enterColorExtPage"];
+    self.actionArray = @[@"enterDateExtPage"];
 }
 
 #pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return self.actionArray.count;
+//}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.actionArray.count;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger row = indexPath.row;
-    NSString *action = [self.actionArray objectAtIndex:row];
-    [self performSelector:NSSelectorFromString(action) withObject:nil];
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NSInteger row = indexPath.row;
+//    NSString *action = [self.actionArray objectAtIndex:row];
+//    [self performSelector:NSSelectorFromString(action) withObject:nil];
+//}
 
 - (void)enterDateExtPage {
     [self.navigationController pushViewController:[DateExtViewController new] animated:YES];

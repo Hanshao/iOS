@@ -77,6 +77,6 @@ typedef void (^HSAnalysisRefreshingBlock)();
 - (void)endRefreshing;
 
 // reload data all right
-- (void)reloadData;
+- (void)reloadGraphics;
 
 @end

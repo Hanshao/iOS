@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "NSDate+Extension.h"
+#import "NSDate+Helper.h"
+#import "NSString+Helper.h"
+#import "UIImage+Helper.h"
 
 UInt8 CheckSum(UInt8 *bytes, NSUInteger size) {
     UInt8 sum = 0;
@@ -31,6 +33,18 @@ UInt8 CheckSum(UInt8 *bytes, NSUInteger size) {
     NSDate *gmt = [NSDate dateWithGMTTimeInterval:[now timeIntervalSince1970]];
     NSLog(@"gmt = %@", [[NSDate defaultFormatter] stringFromDate:gmt]);
     
+    // objc
+    // objc_msgSend(self, @selector(nslog:), @"Hello, world!!");
+    
+//    NSCalendar *calendar = [NSCalendar currentCalendar];
+//    NSDateComponents *components = [[NSDateComponents alloc] init];
+//    components.month = 4; components.day = 19;
+//    components.year = 2016;
+//    NSTimeInterval interval = [[calendar dateFromComponents:components] timeIntervalSince1970];
+//    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSince1970];
+//    
+//    NSLog(@"interval = %ld, interval / (24 * 3600) = %f", (unsigned long)interval, interval / (24 * 3600));
+//    NSLog(@"timeInterval = %ld, timeInterval / (24 * 3600) = %f", (unsigned long)timeInterval, timeInterval / (24 * 3600));
     /**
     UInt8 bytes[] = {
         0xAA, 0xAA, 0x0C, 0xD2, 0x41, 0x43, 0x33, 0x39, 0xCE, 0x55, 0x55,
@@ -113,7 +127,96 @@ UInt8 CheckSum(UInt8 *bytes, NSUInteger size) {
     
     NSLog(@"%@", model); **/
     
+    ////////////////////// 时间 ////////////////////////////////////////////////////////////////////////////////
+    // 非重复, 触发时间为原时间
+    // 重复, 且达到了定时时间
+    NSDate *today = [NSDate date];
+    NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday | NSCalendarUnitHour | NSCalendarUnitMinute;
+    // 下次触发时间
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar setTimeZone:timeZone];
+    
+    NSDateComponents *components = [calendar components:unitFlags fromDate:today];
+    NSInteger weekDay = components.weekday;
+    
+    NSLog(@"date form component %@, weekDay = %d", [calendar dateFromComponents:components], (int)weekDay);
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////// 时间 /////////////////////////////////////////////////////////
+    NSDate *newToday = [NSDate date];
+    NSLog(@"now time interval since 1970 %f", [newToday timeIntervalSince1970]);
+    [self datelog];
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    ////////////////////////////////////////////// 电话号码验证 ////////////////////////////////////////////////
+    if ([@"0268888888" isPhoneNumber]) {
+        NSLog(@"026正确的固话");
+    } else {
+        NSLog(@"026错误的固话");
+    }
+    if ([@"0258888888" isPhoneNumber]) {
+        NSLog(@"025正确的固话");
+    } else {
+        NSLog(@"025错误的固话");
+    }
+    if ([@"03688888888" isPhoneNumber]) {
+        NSLog(@"036正确的固话");
+    } else {
+        NSLog(@"036错误的固话");
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    ////////////////////////////////////////////// 图片保存到路径 /////////////////////////////////////////////
+    UIImage *image = [UIImage imageWithColor:[UIColor orangeColor] size:CGSizeMake(320, 568)];
+    [image saveToAlbum:@"352Air" completion:^(UIImage *image, NSError *error) {
+        if(error) NSLog(@"保存失败");
+        else  NSLog(@"保存成功");
+    }];
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    ///////////////////////////////////////////// 地址处理 //////////////////////////////////////////////////
+//    NSString *location = @"北京市·北京市·海淀区";
+//    NSString *_ccity = @"北京市", *_detail = @"朝阳区大道", *_division = @"";
+//    NSArray *list = [location componentsSeparatedByString:@"·"];
+//    NSString *division = list.count > 0 ? [list objectAtIndex:0] : nil;
+//    NSString *ccity = list.count > 1 ? [list objectAtIndex:1] : nil;
+//    NSString *detail = list.count > 2 ? [list objectAtIndex:2] : nil;
+//    
+//    // 直辖市处理
+//    NSArray *directArray = @[@"北京", @"天津", @"上海", @"重庆"];
+//    for (NSString *direct in directArray) {
+//        if (![division hasPrefix:direct]) continue;
+//        if (![ccity hasPrefix:direct]) {
+//            if (!(ccity == _detail || [ccity isEqualToString:_detail]))
+//                _detail = ccity;
+//            if (!(division == _ccity || [division isEqualToString:_ccity]))
+//                _ccity = division; break;
+//        } else { break; } // 仍然参考非直辖市的处理
+//    }
+//    
+//    // 非直辖市处理
+//    if (!(ccity == _ccity || [ccity isEqualToString:_ccity]))
+//        _ccity = ccity;
+//    if (!(detail == _detail || [detail isEqualToString:_detail]))
+//        _detail = detail;
+//    if (!(division == _division || [division isEqualToString:_division]))
+//        _division = division;
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
     return YES;
+}
+- (void)datelog {
+    NSDate *date = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSInteger hour = [calendar component:NSCalendarUnitHour fromDate:date];
+    NSInteger minute = [calendar component:NSCalendarUnitMinute fromDate:date];
+    NSLog(@"hour = %d, minute = %d, timeZone = %@", (int)hour, (int)minute, calendar.timeZone);
+}
+- (void)helloWorld {
+    NSLog(@"Hello, world!");
+}
+- (void)nslog:(NSString *)log {
+    NSLog(@"%@", log);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

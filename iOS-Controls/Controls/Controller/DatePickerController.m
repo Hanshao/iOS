@@ -50,16 +50,19 @@
     // 添加 日期选择器
     self.year = 2016, self.month = 1, self.day = 1;
     self.hour = 0, self.minute = 0;
-    self.yPickerView = [[HSPickerView alloc] initWithFrame:CGRectMake(0, 0, 272, 150)];
+    self.yPickerView = [[HSPickerView alloc] init];
     self.yPickerView.backgroundColor = [UIColor whiteColor];
     self.yPickerView.delegate = self;
     [self.scrollView addSubview:self.yPickerView];
     
-    self.mPickerView = [[HSPickerView alloc] initWithFrame:CGRectMake(0, 0, 272, 150)];
+    self.mPickerView = [[HSPickerView alloc] init];
     self.yPickerView.backgroundColor = [UIColor whiteColor];
     self.mPickerView.delegate = self;
     [self.scrollView addSubview:self.mPickerView];
-    self.scrollView.contentSize = CGSizeMake(272 * 2, 150);
+    
+    [self.yPickerView reloadAllComponents];
+    [self.mPickerView reloadAllComponents];
+    [self.yPickerView selectRow:9 ofComponent:0 animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -70,9 +73,6 @@
         self.yPickerView.frame = CGRectMake(0, 0, size.width, size.height);
         self.mPickerView.frame = CGRectMake(size.width, 0, size.width, size.height);
         self.scrollView.contentSize = CGSizeMake(size.width * 2, size.height);
-        [self.yPickerView selectRow:9 ofComponent:0 animated:YES];
-        [self.yPickerView reloadAllComponents];
-        [self.mPickerView reloadAllComponents];
     });
 }
 

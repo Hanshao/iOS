@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    NSString *string = @"你好";
+//    NSString *acsiiString = [NSString stringWithFormat:@"%s", [string cStringUsingEncoding:NSUTF8StringEncoding]];
+//    NSLog(@"acsii %@", acsiiString);
+    
     return YES;
 }
 
