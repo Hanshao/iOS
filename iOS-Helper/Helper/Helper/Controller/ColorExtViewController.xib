@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorExtViewController">
             <connections>
+                <outlet property="imageView" destination="tDN-Rm-H9a" id="pvq-lR-NlY"/>
+                <outlet property="imageView2" destination="Mmh-dz-Uhj" id="Cq5-rb-jXE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,7 +20,29 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5T6-Ce-Tt6">
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tDN-Rm-H9a">
+                            <rect key="frame" x="60" y="32" width="200" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="tDN-Rm-H9a" secondAttribute="height" multiplier="1:1" id="MQA-bV-8iq"/>
+                                <constraint firstAttribute="width" constant="200" id="svv-q8-lme"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mmh-dz-Uhj">
+                            <rect key="frame" x="60" y="272" width="200" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Mmh-dz-Uhj" secondAttribute="height" multiplier="1:1" id="bno-Wa-0iR"/>
+                                <constraint firstAttribute="width" constant="200" id="dP4-uJ-t6F"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="tDN-Rm-H9a" firstAttribute="centerY" secondItem="5T6-Ce-Tt6" secondAttribute="centerY" constant="-120" id="2R1-ey-kCT"/>
+                        <constraint firstItem="Mmh-dz-Uhj" firstAttribute="centerX" secondItem="5T6-Ce-Tt6" secondAttribute="centerX" id="5XF-R4-ks9"/>
+                        <constraint firstItem="tDN-Rm-H9a" firstAttribute="centerX" secondItem="5T6-Ce-Tt6" secondAttribute="centerX" id="cU9-AN-LNd"/>
+                        <constraint firstItem="Mmh-dz-Uhj" firstAttribute="centerY" secondItem="5T6-Ce-Tt6" secondAttribute="centerY" constant="120" id="gaq-Qb-QOM"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

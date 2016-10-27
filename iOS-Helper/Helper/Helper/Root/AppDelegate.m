@@ -11,6 +11,10 @@
 #import "NSString+Helper.h"
 #import "UIImage+Helper.h"
 
+#import "ChildObject.h"
+#import "KeychainItemWrapper.h"
+
+
 UInt8 CheckSum(UInt8 *bytes, NSUInteger size) {
     UInt8 sum = 0;
     for (int i = 0; i < size ; ++ i) {
@@ -28,14 +32,44 @@ UInt8 CheckSum(UInt8 *bytes, NSUInteger size) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UITableViewCell *cell;
+    cell.accessoryView;
+    UITableView *tableView;
+    tableView.separatorStyle
+    UILocalNotification *local;
+    NSString *str = {
+        @"Nihao"
+    };
+    NSLog(@"block.init = %@", str);
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierChinese];
+    [calendar setFirstWeekday:3];
+    int weekday = [calendar component:NSCalendarUnitWeekday fromDate:[NSDate date]];
+    NSLog(@"calendar.weekday = %d", weekday);
+    [str sizeWithFont:nil];
     
     NSDate *now = [NSDate date];
     NSDate *gmt = [NSDate dateWithGMTTimeInterval:[now timeIntervalSince1970]];
     NSLog(@"gmt = %@", [[NSDate defaultFormatter] stringFromDate:gmt]);
+    ////////////// Keychian 测试 //////////////////////
+    NSString *bundleIdentifier = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+    KeychainItemWrapper *wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:bundleIdentifier accessGroup:nil];
     
+    id accessKey = [wrapper objectForKey:(id)kSecValueData];
+    if ([accessKey isKindOfClass:NSString.class]) {
+        NSLog(@"keychain.accesskey = %@", accessKey);
+    } else {
+        [wrapper setObject:@"Hello, world." forKey:(id)kSecValueData];
+    }
+    
+    SEL sel = NSSelectorFromString(@"myChildObject:");
+    id object = [self performSelector:sel withObject:self];
+            
+    /////////////////////////////////////////////
+    ////////////////////// runtime ////////////////////////////////////////////////////////////////////////////
     // objc
     // objc_msgSend(self, @selector(nslog:), @"Hello, world!!");
-    
+    ////////////////////// 日历 ////////////////////////////////////////////////////////////////////////////////
 //    NSCalendar *calendar = [NSCalendar currentCalendar];
 //    NSDateComponents *components = [[NSDateComponents alloc] init];
 //    components.month = 4; components.day = 19;
@@ -45,6 +79,7 @@ UInt8 CheckSum(UInt8 *bytes, NSUInteger size) {
 //    
 //    NSLog(@"interval = %ld, interval / (24 * 3600) = %f", (unsigned long)interval, interval / (24 * 3600));
 //    NSLog(@"timeInterval = %ld, timeInterval / (24 * 3600) = %f", (unsigned long)timeInterval, timeInterval / (24 * 3600));
+    ////////////////////// 数据解析 ////////////////////////////////////////////////////////////////////////////////
     /**
     UInt8 bytes[] = {
         0xAA, 0xAA, 0x0C, 0xD2, 0x41, 0x43, 0x33, 0x39, 0xCE, 0x55, 0x55,
@@ -126,85 +161,111 @@ UInt8 CheckSum(UInt8 *bytes, NSUInteger size) {
     }
     
     NSLog(@"%@", model); **/
-    
     ////////////////////// 时间 ////////////////////////////////////////////////////////////////////////////////
-    // 非重复, 触发时间为原时间
-    // 重复, 且达到了定时时间
-    NSDate *today = [NSDate date];
-    NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday | NSCalendarUnitHour | NSCalendarUnitMinute;
-    // 下次触发时间
-    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    [calendar setTimeZone:timeZone];
-    
-    NSDateComponents *components = [calendar components:unitFlags fromDate:today];
-    NSInteger weekDay = components.weekday;
-    
-    NSLog(@"date form component %@, weekDay = %d", [calendar dateFromComponents:components], (int)weekDay);
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+//    // 非重复, 触发时间为原时间
+//    // 重复, 且达到了定时时间
+//    NSDate *today = [NSDate date];
+//    NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday | NSCalendarUnitHour | NSCalendarUnitMinute;
+//    // 下次触发时间
+//    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+//    NSCalendar *calendar = [NSCalendar currentCalendar];
+//    [calendar setTimeZone:timeZone];
+//    
+//    NSDateComponents *components = [calendar components:unitFlags fromDate:today];
+//    NSInteger weekDay = components.weekday;
+//    
+//    NSLog(@"date form component %@, weekDay = %d", [calendar dateFromComponents:components], (int)weekDay);
     /////////////////////////////////////////// 时间 /////////////////////////////////////////////////////////
-    NSDate *newToday = [NSDate date];
-    NSLog(@"now time interval since 1970 %f", [newToday timeIntervalSince1970]);
-    [self datelog];
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
+//    NSDate *newToday = [NSDate date];
+//    NSLog(@"now time interval since 1970 %f", [newToday timeIntervalSince1970]);
+//    [self datelog];
     ////////////////////////////////////////////// 电话号码验证 ////////////////////////////////////////////////
-    if ([@"0268888888" isPhoneNumber]) {
-        NSLog(@"026正确的固话");
-    } else {
-        NSLog(@"026错误的固话");
-    }
-    if ([@"0258888888" isPhoneNumber]) {
-        NSLog(@"025正确的固话");
-    } else {
-        NSLog(@"025错误的固话");
-    }
-    if ([@"03688888888" isPhoneNumber]) {
-        NSLog(@"036正确的固话");
-    } else {
-        NSLog(@"036错误的固话");
-    }
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    ////////////////////////////////////////////// 图片保存到路径 /////////////////////////////////////////////
-    UIImage *image = [UIImage imageWithColor:[UIColor orangeColor] size:CGSizeMake(320, 568)];
-    [image saveToAlbum:@"352Air" completion:^(UIImage *image, NSError *error) {
-        if(error) NSLog(@"保存失败");
-        else  NSLog(@"保存成功");
-    }];
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    ///////////////////////////////////////////// 地址处理 //////////////////////////////////////////////////
-//    NSString *location = @"北京市·北京市·海淀区";
-//    NSString *_ccity = @"北京市", *_detail = @"朝阳区大道", *_division = @"";
-//    NSArray *list = [location componentsSeparatedByString:@"·"];
-//    NSString *division = list.count > 0 ? [list objectAtIndex:0] : nil;
-//    NSString *ccity = list.count > 1 ? [list objectAtIndex:1] : nil;
-//    NSString *detail = list.count > 2 ? [list objectAtIndex:2] : nil;
-//    
-//    // 直辖市处理
-//    NSArray *directArray = @[@"北京", @"天津", @"上海", @"重庆"];
-//    for (NSString *direct in directArray) {
-//        if (![division hasPrefix:direct]) continue;
-//        if (![ccity hasPrefix:direct]) {
-//            if (!(ccity == _detail || [ccity isEqualToString:_detail]))
-//                _detail = ccity;
-//            if (!(division == _ccity || [division isEqualToString:_ccity]))
-//                _ccity = division; break;
-//        } else { break; } // 仍然参考非直辖市的处理
+//    if ([@"0268888888" isPhoneNumber]) {
+//        NSLog(@"026正确的固话");
+//    } else {
+//        NSLog(@"026错误的固话");
 //    }
-//    
-//    // 非直辖市处理
-//    if (!(ccity == _ccity || [ccity isEqualToString:_ccity]))
-//        _ccity = ccity;
-//    if (!(detail == _detail || [detail isEqualToString:_detail]))
-//        _detail = detail;
-//    if (!(division == _division || [division isEqualToString:_division]))
-//        _division = division;
+//    if ([@"0258888888" isPhoneNumber]) {
+//        NSLog(@"025正确的固话");
+//    } else {
+//        NSLog(@"025错误的固话");
+//    }
+//    if ([@"03688888888" isPhoneNumber]) {
+//        NSLog(@"036正确的固话");
+//    } else {
+//        NSLog(@"036错误的固话");
+//    }
+    ////////////////////////////////////////////// 图片保存到路径 /////////////////////////////////////////////
+//    UIImage *image = [UIImage imageWithColor:[UIColor orangeColor] size:CGSizeMake(320, 568)];
+//    [image saveToAlbum:@"352Air" completion:^(UIImage *image, NSError *error) {
+//        if(error) NSLog(@"保存失败");
+//        else  NSLog(@"保存成功");
+//    }];
+    ///////////////////////////////////////// @dynamic和@synchronize //////////////////////////////////////////////////////////
+//    ChildObject *object = [ChildObject new];
+//    object.name = @"Han"; object.frame = CGRectMake(0, 0, 100, 100);
+//    NSLog(@"object name = %@", object.name);
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
+//    @try {
+//        [self throwNewException];
+//    } @catch (NSException *exception) {
+//        NSLog(@"Catch one exception = %@.", exception);
+//    } @finally {
+//        NSLog(@"Codes exceute finally.");
+//    }
+    /////////////////////////////////////////////Category ////////////////////////////////////////////////////////
+    NSString *a = @"abc", *b = @"ABC";
+    NSLog(@"%d", (int)[a compare:b]);
+    NSLog(@"'abc'.size = %lu", a.ascii_size);
     
+    NSLog(@"'你好Hello, pm2.5'.size = %lu", @"你好Hello, pm2.5".ascii_size);
+    
+    NSString *text = @"你好Hello, pm2.5先生";
+    NSUInteger size = [self ascii_subsize:20 text:text];
+    NSLog(@"'%@'.substring = %@", text, [text substringToIndex:size]);
+    
+    NSString *number = [NSString stringWithFormat:@"%@", @(90.6)];
+    NSLog(@"number = %@", number);
+    
+    NSString *json = [NSString jsonWithArray:@[@(5), @"真的吗", @[@"这就很逗了"], @{@"total":@(99)}]];
+    NSData *data = [json dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSLog(@"json  = %@\nthe reverse = %@\nnormal array = %@\nnormal dictionary = %@",
+          json, array, @[@(5), @"真的吗"], @{@"Total":@(99)});
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
     return YES;
 }
+
+- (ChildObject *)myChildObject:(id)object {
+    return [ChildObject new];
+}
+
+- (NSUInteger)ascii_subsize:(NSUInteger)size text:(NSString *)text {
+    
+    NSUInteger nsize = text.length;
+    NSUInteger tsize = 0;
+    
+    for (int i = 0; i < nsize; ++ i) {
+        unichar c = [text characterAtIndex:i]; // 按顺序取出单个字符
+        if ( isblank(c) || isascii(c)) {
+            ++ tsize;
+        } else {
+            tsize += 2;
+        }
+        if (tsize > size) {
+            return i;
+        }
+    }
+    
+    return nsize;
+}
+
+
+- (void)throwNewException {
+    @throw [[NSException alloc] init];
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 - (void)datelog {
     NSDate *date = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -242,3 +303,35 @@ UInt8 CheckSum(UInt8 *bytes, NSUInteger size) {
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

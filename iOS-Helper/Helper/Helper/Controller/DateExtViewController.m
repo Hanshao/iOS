@@ -29,7 +29,7 @@
     title = [title stringByAppendingFormat:@"\nutc : %@", [dateFormatter stringFromDate:utc]];
     title = [title stringByAppendingFormat:@"\nnow time interval %.0f, utc time interval = %.0f, offset = %.0f",
           [now timeIntervalSince1970], [utc timeIntervalSince1970], 8.0 * 3600];
-    self.titleLabel.text = title;
+    self.titleLabel.text = title;    
 }
 
 @end

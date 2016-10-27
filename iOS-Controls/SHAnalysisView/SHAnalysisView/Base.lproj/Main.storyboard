@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7yp-tp-3AU" customClass="SHAnalysisView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="256"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="T0U-5c-gNA"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0265" translatesAutoresizingMaskIntoConstraints="NO" id="aBn-DV-KZk">
+                                <rect key="frame" x="32" y="280" width="256" height="256"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="8Qp-ey-bgD"/>
+                                    <constraint firstAttribute="width" constant="128" id="EgU-07-U7D"/>
+                                    <constraint firstAttribute="width" constant="256" id="SbF-N0-rzi"/>
+                                    <constraint firstAttribute="width" secondItem="aBn-DV-KZk" secondAttribute="height" multiplier="1:1" id="ceC-dK-kLi"/>
+                                    <constraint firstAttribute="height" constant="128" id="ugp-NC-QLt"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EgU-07-U7D"/>
+                                        <exclude reference="SbF-N0-rzi"/>
+                                        <exclude reference="ugp-NC-QLt"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7yp-tp-3AU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KUD-as-dsv"/>
+                            <constraint firstItem="aBn-DV-KZk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QtI-Z7-1Ft"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aBn-DV-KZk" secondAttribute="bottom" constant="32" id="W8X-Rr-Bl7"/>
+                            <constraint firstAttribute="trailing" secondItem="aBn-DV-KZk" secondAttribute="trailing" constant="32" id="fT5-JO-QJZ"/>
+                            <constraint firstItem="aBn-DV-KZk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="32" id="ggc-Tn-JtE"/>
+                            <constraint firstAttribute="trailing" secondItem="7yp-tp-3AU" secondAttribute="trailing" id="mij-LK-KPe"/>
+                            <constraint firstItem="7yp-tp-3AU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uqp-8m-lWi"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fT5-JO-QJZ"/>
+                                <exclude reference="ggc-Tn-JtE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="analysisView" destination="7yp-tp-3AU" id="YMW-W4-Dc7"/>
+                        <outlet property="imageView" destination="aBn-DV-KZk" id="nv2-y6-9Sp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="510" y="314"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="IMG_0265" width="750" height="750"/>
+    </resources>
+</document>

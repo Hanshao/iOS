@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viW-If-Up4">
+                                <rect key="frame" x="36" y="140" width="248" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="npH-cG-f5x"/>
+                                </constraints>
+                                <state key="normal" title="确定"/>
+                                <connections>
+                                    <action selector="okayHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="efL-Lh-Eub"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpG-xG-MZA">
+                                <rect key="frame" x="16" y="188" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bmx-rq-jcL"/>
+                                </constraints>
+                                <state key="normal" title="取消"/>
+                                <connections>
+                                    <action selector="cancelHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="su9-Y3-CIE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4i-QP-srW">
+                                <rect key="frame" x="16" y="236" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7gG-yV-Jcw"/>
+                                </constraints>
+                                <state key="normal" title="无"/>
+                                <connections>
+                                    <action selector="noneHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dMe-Pt-c6O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEc-km-2rJ">
+                                <rect key="frame" x="16" y="284" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wqH-0d-cd2"/>
+                                </constraints>
+                                <state key="normal" title="所有"/>
+                                <connections>
+                                    <action selector="allHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HuB-qP-PII"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UZ-cV-ARh">
+                                <rect key="frame" x="16" y="332" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7AL-gM-7eF"/>
+                                </constraints>
+                                <state key="normal" title="非XIB(纯VFL)版本"/>
+                                <connections>
+                                    <action selector="vflVerHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="re1-pp-34F"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="2UZ-cV-ARh" secondAttribute="trailing" id="B31-hc-fUi"/>
+                            <constraint firstItem="viW-If-Up4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="D3k-Oo-Ubg"/>
+                            <constraint firstItem="lEc-km-2rJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DO5-gE-0VU"/>
+                            <constraint firstItem="Q4i-QP-srW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DP6-00-VMd"/>
+                            <constraint firstItem="ZpG-xG-MZA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JCF-bP-f8T"/>
+                            <constraint firstItem="2UZ-cV-ARh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Mfe-Kh-4ow"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q4i-QP-srW" secondAttribute="trailing" id="Z2t-Lg-MgY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="viW-If-Up4" secondAttribute="trailing" constant="20" id="aFu-Uu-SLT"/>
+                            <constraint firstItem="2UZ-cV-ARh" firstAttribute="top" secondItem="lEc-km-2rJ" secondAttribute="bottom" constant="8" id="bs6-4L-vhS"/>
+                            <constraint firstItem="lEc-km-2rJ" firstAttribute="top" secondItem="Q4i-QP-srW" secondAttribute="bottom" constant="8" id="ere-JK-LsF"/>
+                            <constraint firstItem="viW-If-Up4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="fbn-Lp-FIv"/>
+                            <constraint firstItem="ZpG-xG-MZA" firstAttribute="top" secondItem="viW-If-Up4" secondAttribute="bottom" constant="8" id="h1N-df-sRi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lEc-km-2rJ" secondAttribute="trailing" id="jGV-Aa-ujD"/>
+                            <constraint firstItem="Q4i-QP-srW" firstAttribute="top" secondItem="ZpG-xG-MZA" secondAttribute="bottom" constant="8" id="lGV-cZ-8p2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZpG-xG-MZA" secondAttribute="trailing" id="r96-o9-hfq"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
